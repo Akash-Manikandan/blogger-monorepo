@@ -1,0 +1,63 @@
+syntax = "proto3";
+
+package user.v1;
+
+option go_package = "github.com/Akash-Manikandan/blogger-be/proto/user/v1";
+
+import "buf/validate/validate.proto";
+
+service UserService {
+  rpc CreateUser(CreateUserRequest) returns (CreateUserResponse);
+  rpc Login(LoginRequest) returns (LoginResponse);
+}
+
+message CreateUserRequest {
+  string username = 1 [
+    (buf.validate.field).string = {
+      min_len: 3,
+      max_len: 20,
+      pattern: "^[a-zA-Z0-9_]+$"
+    }
+  ];
+  
+  string email = 2 [(buf.validate.field).string.email = true];
+  
+  string password = 3 [
+    (buf.validate.field).string = {
+      min_len: 6,
+      max_len: 50
+    }
+  ];
+}
+
+
+message CreateUserResponse {
+  string id = 1;
+  string username = 2;
+  string email = 3;
+  string created_at = 4;
+  string updated_at = 5;
+  string token = 6;
+}
+
+message LoginRequest {
+  string email = 1 [
+    (buf.validate.field).string.email = true
+  ];
+  
+  string password = 2 [
+    (buf.validate.field).string = {
+      min_len: 6,
+      max_len: 50
+    }
+  ];
+}
+
+message LoginResponse {
+  string token = 1;
+  string email = 2;
+  string username = 3;
+  string id = 4;
+  string created_at = 5;
+  string updated_at = 6;
+}

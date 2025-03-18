@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package auth.v1;
+option go_package = "github.com/Akash-Manikandan/blogger-be/proto/auth/v1";
+
+import "google/protobuf/descriptor.proto";
+
+// Define a custom option for authentication requirement
+extend google.protobuf.MethodOptions {
+  bool requires_auth = 50000;
+}

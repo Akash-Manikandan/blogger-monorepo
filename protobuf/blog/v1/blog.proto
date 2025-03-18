@@ -1,0 +1,147 @@
+syntax = "proto3";
+
+package blog.v1;
+
+option go_package = "github.com/Akash-Manikandan/blogger-be/proto/blog/v1";
+
+import "auth/v1/auth.proto";
+
+service BlogService {
+  rpc CreateBlog(CreateBlogRequest) returns (CreateBlogResponse) {
+    option (auth.v1.requires_auth) = true;
+  };
+  rpc GetBlog(GetBlogRequest) returns (GetBlogResponse) {
+    option (auth.v1.requires_auth) = true;
+  };
+  rpc ListBlogs(ListBlogsRequest) returns (ListBlogsResponse) {
+    option (auth.v1.requires_auth) = true;
+  };
+  rpc LikeBlog(LikeBlogRequest) returns (LikeBlogResponse) {
+    option (auth.v1.requires_auth) = true;
+  };
+  rpc AddView(AddViewRequest) returns (AddViewResponse) {
+    option (auth.v1.requires_auth) = true;
+  };
+  rpc GetComments(GetCommentsRequest) returns (GetCommentsResponse) {
+    option (auth.v1.requires_auth) = true;
+  };
+  rpc AddComment(AddCommentRequest) returns (AddCommentResponse) {
+    option (auth.v1.requires_auth) = true;
+  };
+  rpc AddSubComment(AddSubCommentRequest) returns (AddSubCommentResponse) {
+    option (auth.v1.requires_auth) = true;
+  };
+  rpc GetTrendingBlogs(GetTrendingBlogsRequest) returns (GetTrendingBlogsResponse) {
+    option (auth.v1.requires_auth) = true;
+  };
+}
+
+message CreateBlogRequest {
+  string title = 1;
+  string content = 2;
+}
+
+message CreateBlogResponse {
+  Blog blog = 1;
+}
+
+message Blog {
+  string title = 1;
+  string content = 2;
+  string author = 3;
+  string id = 4;
+  string created_at = 5;
+  string updated_at = 6;
+  int32 likes = 7;
+  int32 views = 8;
+  repeated Tag tags = 9;
+}
+
+message GetBlogRequest {
+  string id = 1;
+}
+
+message GetBlogResponse {
+  Blog blog = 1;
+}
+
+message ListBlogsRequest {
+  optional string filter = 1;
+  optional int32 page = 2;
+  optional int32 limit = 3;
+}
+
+message ListBlogsResponse {
+  repeated Blog blogs = 1;
+}
+
+message LikeBlogRequest {
+  string blog_id = 1;
+}
+
+message LikeBlogResponse {
+  string message = 1;
+}
+
+message AddViewRequest {
+  string blog_id = 1;
+}
+
+message AddViewResponse {
+  string message = 1;
+}
+
+message AddCommentRequest {
+  string blog_id = 1;
+  string content = 2;
+}
+
+message AddCommentResponse {
+  Comment comment = 1;
+}
+
+message Comment {
+  string content = 1;
+  string author = 2;
+  string created_at = 3;
+  string updated_at = 4;
+  string likes = 5;
+  repeated Comment sub_comments = 6;
+}
+
+message AddSubCommentRequest {
+  string blog_id = 1;
+  string comment_id = 2;
+  string content = 3;
+}
+
+message AddSubCommentResponse {
+  Comment comment = 1;
+}
+
+message GetCommentsRequest {
+  string blog_id = 1;
+  optional string filter = 2;
+  optional int32 page = 3;
+  optional int32 limit = 4;
+}
+
+message GetCommentsResponse {
+  repeated Comment comments = 1;
+}
+
+message GetTrendingBlogsRequest {
+  int32 limit = 1;
+  string timeframe = 2;// daily, weekly, monthly
+}
+
+message GetTrendingBlogsResponse {
+  repeated Blog blogs = 1;
+}
+
+message Tag {
+  string id = 1;
+  string name = 2;
+  string created_at = 3;
+  string updated_at = 4;
+}
