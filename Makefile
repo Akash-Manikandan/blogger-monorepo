@@ -4,27 +4,27 @@
 dev: generate-proto
 	@make -j2 dev-fe dev-be
 
-# Start frontend development server
+# Start app development server
 dev-fe:
-	@echo "Starting frontend development server..."
+	@echo "Starting App development server..."
 	cd blogger-app && bun run dev
 
-# Start backend development server
+# Start service development server
 dev-be:
-	@echo "Starting backend development server..."
+	@echo "Starting service development server..."
 	cd blogger-service && nodemon --exec go run cmd/api/main.go --signal SIGTERM
 
 # Install dependencies
 install:
-	@echo "Installing frontend dependencies..."
-	cd blogger-app && npm install
-	@echo "Installing backend dependencies..."
+	@echo "Installing app dependencies..."
+	cd blogger-app && bun install
+	@echo "Installing service dependencies..."
 	cd blogger-service && go mod download
 
 # Generate protobuf code
 generate-proto:
 	@echo "Generating protobuf code..."
-	./scripts/generate-grpc.sh
+	cd protobuf && buf generate
 
 # Clean generated files
 clean:
@@ -35,10 +35,10 @@ clean:
 # Help target
 help:
 	@echo "Available targets:"
-	@echo "  dev          - Start both frontend and backend development servers"
-	@echo "  dev-fe       - Start frontend development server"
-	@echo "  dev-be       - Start backend development server"
-	@echo "  install      - Install dependencies for both frontend and backend"
+	@echo "  dev          - Start both app and service development servers"
+	@echo "  dev-fe       - Start app development server"
+	@echo "  dev-be       - Start service development server"
+	@echo "  install      - Install dependencies for both app and service"
 	@echo "  generate-proto - Generate protobuf code"
 	@echo "  clean        - Clean generated files"
 	@echo "  help         - Show this help message"

@@ -1,4 +1,5 @@
 #!/bin/bash
+# @deprecated: This script is deprecated in favor of using the `buf generate inside protobuf/` command directly.
 
 # Set module path for Go code generation
 # GO_MODULE_PATH="github.com/Akash-Manikandan/blogger-service"
