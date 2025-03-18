@@ -44,9 +44,9 @@ blogger-monorepo/
 
 ## Prerequisites
 
-- Node.js (v18+)
+- Node.js (v22+)
 - Bun package manager
-- Go 1.21+
+- Go 1.23+
 - Protocol Buffers compiler (protoc)
 - PostgreSQL
 - Docker (optional)
