@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 package auth.v1;
-option go_package = "github.com/Akash-Manikandan/blogger-be/proto/auth/v1";
+option go_package = "github.com/Akash-Manikandan/blogger-service/proto/auth/v1";
 
 import "google/protobuf/descriptor.proto";
 

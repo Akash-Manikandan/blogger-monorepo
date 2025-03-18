@@ -2,29 +2,29 @@ version: v1
 managed:
   enabled: true
   go_package_prefix:
-    default: github.com/Akash-Manikandan/blogger-be/proto
+    default: github.com/Akash-Manikandan/blogger-service/proto
     except:
       - buf.build/bufbuild/protovalidate
 
 plugins:
   # Go protobuf and gRPC
   - plugin: go
-    out: ../blogger-be/proto
+    out: ../blogger-service/proto
     opt:
       - paths=source_relative
   - plugin: go-grpc
-    out: ../blogger-be/proto
+    out: ../blogger-service/proto
     opt:
       - paths=source_relative
   - plugin: validate
-    out: ../blogger-be/proto
+    out: ../blogger-service/proto
     opt:
       - lang=go
       - paths=source_relative
 
   # TypeScript protobuf (without validation)
   - plugin: es
-    out: ../blogger-fe/src/lib/proto
+    out: ../blogger-app/src/lib/proto
     opt:
       - target=ts
       - keep_empty_files=false

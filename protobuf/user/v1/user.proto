@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package user.v1;
 
-option go_package = "github.com/Akash-Manikandan/blogger-be/proto/user/v1";
+option go_package = "github.com/Akash-Manikandan/blogger-service/proto/user/v1";
 
 import "buf/validate/validate.proto";
 

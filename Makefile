@@ -7,19 +7,19 @@ dev: generate-proto
 # Start frontend development server
 dev-fe:
 	@echo "Starting frontend development server..."
-	cd blogger-fe && bun run dev
+	cd blogger-app && bun run dev
 
 # Start backend development server
 dev-be:
 	@echo "Starting backend development server..."
-	cd blogger-be && nodemon --exec go run cmd/api/main.go --signal SIGTERM
+	cd blogger-service && nodemon --exec go run cmd/api/main.go --signal SIGTERM
 
 # Install dependencies
 install:
 	@echo "Installing frontend dependencies..."
-	cd blogger-fe && npm install
+	cd blogger-app && npm install
 	@echo "Installing backend dependencies..."
-	cd blogger-be && go mod download
+	cd blogger-service && go mod download
 
 # Generate protobuf code
 generate-proto:
@@ -29,8 +29,8 @@ generate-proto:
 # Clean generated files
 clean:
 	@echo "Cleaning generated files..."
-	rm -rf blogger-fe/protobuf/generated
-	rm -rf blogger-be/proto
+	rm -rf blogger-app/protobuf/generated
+	rm -rf blogger-service/proto
 
 # Help target
 help:
