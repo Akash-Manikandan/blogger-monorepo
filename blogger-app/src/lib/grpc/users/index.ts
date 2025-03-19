@@ -1,10 +1,11 @@
-import { UserService } from '$lib/proto/user/v1/user_pb'; // Adjust the import path
+import { CONNECTION_URL } from '$lib/constants/grpc';
+import { UserService } from '$lib/proto/user/v1/user_pb';
 import { createClient } from '@connectrpc/connect';
 
 import { createGrpcTransport } from '@connectrpc/connect-node';
 
 const transport = createGrpcTransport({
-	baseUrl: 'http://localhost:50051',
+	baseUrl: CONNECTION_URL,
 });
 
 export const userClient = {
