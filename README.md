@@ -1,13 +1,13 @@
 # Blogger Monorepo
 
-A monorepo architecture containing a SvelteKit application and a User Service built with Go.
+A monorepo architecture containing a SvelteKit application and a Blog Service built with Go.
 
 ## Project Structure
 
 ```
 blogger-monorepo/
 ├── blogger-app/        # SvelteKit fullstack application
-├── blogger-service/    # Go-based User Service
+├── blogger-service/    # Go-based Blog Service
 └── protobuf/           # Shared Protocol Buffers definitions
 ```
 
@@ -25,20 +25,20 @@ blogger-monorepo/
   - Authentication handling
   - Blog post management
 
-### User Service (blogger-service)
+### Blog Service (blogger-service)
 - **Language**: Go
 - **Features**:
   - gRPC service implementation
-  - User management (registration, authentication)
+  - Blog management
   - JWT token handling
   - Database integration (PostgreSQL)
   - Validation middleware
 
 ### Shared Protobuf Definitions (protobuf)
 - Protocol Buffers service definitions
-- Shared between SvelteKit app and User Service
+- Shared between SvelteKit app and Blog Service
 - Includes:
-  - User service definitions
+  - Blog service definitions
   - Validation rules
   - Request/Response types
 
@@ -71,7 +71,7 @@ brew install bufbuild/buf/buf
 
 ```bash
 # Clone repository
-git clone https://github.com/yourusername/blogger-monorepo.git
+git clone https://github.com/Akash-Manikandan/blogger-monorepo.git
 cd blogger-monorepo
 
 # Install dependencies
@@ -87,7 +87,7 @@ PUBLIC_API_URL=http://localhost:8080
 DATABASE_URL=postgresql://user:password@localhost:5432/bloggerdb
 ```
 
-#### User Service (.env)
+#### Blog Service (.env)
 ```text
 // filepath: /blogger-service/.env
 DB_CONNECTION=postgresql://user:password@localhost:5432/bloggerdb
@@ -107,7 +107,7 @@ make generate-proto
 # Start SvelteKit development server
 make dev-app
 
-# Start User Service
+# Start Blog Service
 make dev-service
 
 # Start both services
@@ -129,13 +129,13 @@ make clean
   - Frontend UI
   - Server API routes
   - Server-side rendering
-- User Service gRPC: localhost:50051
-  - User management endpoints
+- Blog Service gRPC: localhost:50051
+  - Blog management endpoints
   - Authentication service
 
 ## API Documentation
 
-### User Service gRPC Endpoints
+### Blog Service gRPC Endpoints
 
 - `CreateUser`: User registration
 - `Login`: User authentication
@@ -147,19 +147,6 @@ make clean
 - `/api/posts/*`: Blog post management
 - `/api/users/*`: User management
 
-## Database Schema
-
-```sql
--- User table
-CREATE TABLE users (
-    id UUID PRIMARY KEY,
-    username VARCHAR(255) NOT NULL,
-    email VARCHAR(255) UNIQUE NOT NULL,
-    password_hash VARCHAR(255) NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-```
 
 ## Contributing
 
@@ -182,7 +169,7 @@ CREATE TABLE users (
    - Check connection strings in .env files
 
 3. **gRPC Connection Refused**
-   - Ensure User Service is running
+   - Ensure Blog Service is running
    - Check port configurations
 
 ## Learn More
