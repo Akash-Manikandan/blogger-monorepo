@@ -28,4 +28,3 @@ plugins:
     opt:
       - target=ts
       - keep_empty_files=false
-      - import_extension=js

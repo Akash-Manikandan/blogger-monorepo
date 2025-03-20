@@ -5,6 +5,7 @@ package blog.v1;
 option go_package = "github.com/Akash-Manikandan/blogger-service/proto/blog/v1";
 
 import "auth/v1/auth.proto";
+import "user/v1/user.proto";
 
 service BlogService {
   rpc CreateBlog(CreateBlogRequest) returns (CreateBlogResponse) {
@@ -48,7 +49,7 @@ message CreateBlogResponse {
 message Blog {
   string title = 1;
   string content = 2;
-  string author = 3;
+  user.v1.User author = 3;
   string id = 4;
   string created_at = 5;
   string updated_at = 6;

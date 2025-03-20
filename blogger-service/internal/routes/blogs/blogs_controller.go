@@ -27,3 +27,19 @@ func (s *BlogServer) CreateBlog(ctx context.Context, req *pb.CreateBlogRequest) 
 	}
 	return CreateBlogService(s.DB, req, userID)
 }
+
+func (s *BlogServer) GetBlog(ctx context.Context, req *pb.GetBlogRequest) (*pb.GetBlogResponse, error) {
+	userID, ok := utils.GetUserID(ctx)
+	if !ok {
+		return nil, status.Errorf(codes.Unauthenticated, "Unauthorized")
+	}
+	return GetBlogService(s.DB, req, userID)
+}
+
+func (s *BlogServer) ListBlogs(ctx context.Context, req *pb.ListBlogsRequest) (*pb.ListBlogsResponse, error) {
+	userID, ok := utils.GetUserID(ctx)
+	if !ok {
+		return nil, status.Errorf(codes.Unauthenticated, "Unauthorized")
+	}
+	return ListBlogsService(s.DB, req, userID)
+}
