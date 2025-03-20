@@ -2,7 +2,6 @@
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
-    $inspect(data);
 </script>
 
 {#each data.blogs as d}
