@@ -8,7 +8,7 @@
 
 	const menuItems = [
 		{
-			title: 'Home',
+			title: 'Dashboard',
 			url: '/dashboard',
 			icon: House
 		},
