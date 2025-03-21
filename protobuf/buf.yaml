@@ -2,7 +2,7 @@ version: v1
 name: buf.build/akash-manikandan/blogger
 deps:
   - buf.build/bufbuild/protovalidate
-  - google/protobuf/descriptor
+  - buf.build/googleapis/googleapis
 breaking:
   use:
     - FILE

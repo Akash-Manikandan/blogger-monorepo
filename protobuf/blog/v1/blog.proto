@@ -40,6 +40,7 @@ service BlogService {
 message CreateBlogRequest {
   string title = 1;
   string content = 2;
+  bool is_public = 3;
 }
 
 message CreateBlogResponse {
@@ -53,17 +54,19 @@ message Blog {
   string id = 4;
   string created_at = 5;
   string updated_at = 6;
-  int32 likes = 7;
-  int32 views = 8;
-  repeated Tag tags = 9;
+  bool is_public = 7;
+  int32 likes = 8;
+  int32 views = 9;
+  repeated Tag tags = 10;
 }
 
 message BlogWithoutContent {
   string title = 1;
-  user.v1.User author = 3;
-  string id = 4;
-  string created_at = 5;
-  string updated_at = 6;
+  user.v1.User author = 2;
+  string id = 3;
+  string created_at = 4;
+  string updated_at = 5;
+  bool is_public = 6;
   int32 likes = 7;
   int32 views = 8;
   repeated Tag tags = 9;

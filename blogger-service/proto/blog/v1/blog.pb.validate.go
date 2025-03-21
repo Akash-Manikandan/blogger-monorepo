@@ -61,6 +61,8 @@ func (m *CreateBlogRequest) validate(all bool) error {
 
 	// no validation rules for Content
 
+	// no validation rules for IsPublic
+
 	if len(errors) > 0 {
 		return CreateBlogRequestMultiError(errors)
 	}
@@ -332,6 +334,8 @@ func (m *Blog) validate(all bool) error {
 
 	// no validation rules for UpdatedAt
 
+	// no validation rules for IsPublic
+
 	// no validation rules for Likes
 
 	// no validation rules for Views
@@ -505,6 +509,8 @@ func (m *BlogWithoutContent) validate(all bool) error {
 	// no validation rules for CreatedAt
 
 	// no validation rules for UpdatedAt
+
+	// no validation rules for IsPublic
 
 	// no validation rules for Likes
 

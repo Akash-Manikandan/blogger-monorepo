@@ -63,7 +63,7 @@ type Blog struct {
 	UserID        string        `gorm:"index;not null" json:"userId"`
 	Title         string        `gorm:"size:200;not null" json:"title"`
 	Content       string        `gorm:"type:text;not null" json:"content"`
-	IsPrivate     bool          `gorm:"default:true;not null" json:"isPrivate"`
+	IsPublic      bool          `gorm:"default:false;not null" json:"isPublic"`
 	TrendingCount int           `gorm:"default:0" json:"trendingCount"`
 	ViewCount     int           `gorm:"default:0" json:"viewCount"`
 
