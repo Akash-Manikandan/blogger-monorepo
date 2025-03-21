@@ -13,7 +13,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file blog/v1/blog.proto.
  */
 export const file_blog_v1_blog: GenFile = /*@__PURE__*/
-  fileDesc("ChJibG9nL3YxL2Jsb2cucHJvdG8SB2Jsb2cudjEiMwoRQ3JlYXRlQmxvZ1JlcXVlc3QSDQoFdGl0bGUYASABKAkSDwoHY29udGVudBgCIAEoCSIxChJDcmVhdGVCbG9nUmVzcG9uc2USGwoEYmxvZxgBIAEoCzINLmJsb2cudjEuQmxvZyKzAQoEQmxvZxINCgV0aXRsZRgBIAEoCRIPCgdjb250ZW50GAIgASgJEh0KBmF1dGhvchgDIAEoCzINLnVzZXIudjEuVXNlchIKCgJpZBgEIAEoCRISCgpjcmVhdGVkX2F0GAUgASgJEhIKCnVwZGF0ZWRfYXQYBiABKAkSDQoFbGlrZXMYByABKAUSDQoFdmlld3MYCCABKAUSGgoEdGFncxgJIAMoCzIMLmJsb2cudjEuVGFnIhwKDkdldEJsb2dSZXF1ZXN0EgoKAmlkGAEgASgJIi4KD0dldEJsb2dSZXNwb25zZRIbCgRibG9nGAEgASgLMg0uYmxvZy52MS5CbG9nImwKEExpc3RCbG9nc1JlcXVlc3QSEwoGZmlsdGVyGAEgASgJSACIAQESEQoEcGFnZRgCIAEoBUgBiAEBEhIKBWxpbWl0GAMgASgFSAKIAQFCCQoHX2ZpbHRlckIHCgVfcGFnZUIICgZfbGltaXQiMQoRTGlzdEJsb2dzUmVzcG9uc2USHAoFYmxvZ3MYASADKAsyDS5ibG9nLnYxLkJsb2ciIgoPTGlrZUJsb2dSZXF1ZXN0Eg8KB2Jsb2dfaWQYASABKAkiIwoQTGlrZUJsb2dSZXNwb25zZRIPCgdtZXNzYWdlGAEgASgJIiEKDkFkZFZpZXdSZXF1ZXN0Eg8KB2Jsb2dfaWQYASABKAkiIgoPQWRkVmlld1Jlc3BvbnNlEg8KB21lc3NhZ2UYASABKAkiNQoRQWRkQ29tbWVudFJlcXVlc3QSDwoHYmxvZ19pZBgBIAEoCRIPCgdjb250ZW50GAIgASgJIjcKEkFkZENvbW1lbnRSZXNwb25zZRIhCgdjb21tZW50GAEgASgLMhAuYmxvZy52MS5Db21tZW50IokBCgdDb21tZW50Eg8KB2NvbnRlbnQYASABKAkSDgoGYXV0aG9yGAIgASgJEhIKCmNyZWF0ZWRfYXQYAyABKAkSEgoKdXBkYXRlZF9hdBgEIAEoCRINCgVsaWtlcxgFIAEoCRImCgxzdWJfY29tbWVudHMYBiADKAsyEC5ibG9nLnYxLkNvbW1lbnQiTAoUQWRkU3ViQ29tbWVudFJlcXVlc3QSDwoHYmxvZ19pZBgBIAEoCRISCgpjb21tZW50X2lkGAIgASgJEg8KB2NvbnRlbnQYAyABKAkiOgoVQWRkU3ViQ29tbWVudFJlc3BvbnNlEiEKB2NvbW1lbnQYASABKAsyEC5ibG9nLnYxLkNvbW1lbnQifwoSR2V0Q29tbWVudHNSZXF1ZXN0Eg8KB2Jsb2dfaWQYASABKAkSEwoGZmlsdGVyGAIgASgJSACIAQESEQoEcGFnZRgDIAEoBUgBiAEBEhIKBWxpbWl0GAQgASgFSAKIAQFCCQoHX2ZpbHRlckIHCgVfcGFnZUIICgZfbGltaXQiOQoTR2V0Q29tbWVudHNSZXNwb25zZRIiCghjb21tZW50cxgBIAMoCzIQLmJsb2cudjEuQ29tbWVudCI7ChdHZXRUcmVuZGluZ0Jsb2dzUmVxdWVzdBINCgVsaW1pdBgBIAEoBRIRCgl0aW1lZnJhbWUYAiABKAkiOAoYR2V0VHJlbmRpbmdCbG9nc1Jlc3BvbnNlEhwKBWJsb2dzGAEgAygLMg0uYmxvZy52MS5CbG9nIkcKA1RhZxIKCgJpZBgBIAEoCRIMCgRuYW1lGAIgASgJEhIKCmNyZWF0ZWRfYXQYAyABKAkSEgoKdXBkYXRlZF9hdBgEIAEoCTLFBQoLQmxvZ1NlcnZpY2USSwoKQ3JlYXRlQmxvZxIaLmJsb2cudjEuQ3JlYXRlQmxvZ1JlcXVlc3QaGy5ibG9nLnYxLkNyZWF0ZUJsb2dSZXNwb25zZSIEgLUYARJCCgdHZXRCbG9nEhcuYmxvZy52MS5HZXRCbG9nUmVxdWVzdBoYLmJsb2cudjEuR2V0QmxvZ1Jlc3BvbnNlIgSAtRgBEkgKCUxpc3RCbG9ncxIZLmJsb2cudjEuTGlzdEJsb2dzUmVxdWVzdBoaLmJsb2cudjEuTGlzdEJsb2dzUmVzcG9uc2UiBIC1GAESRQoITGlrZUJsb2cSGC5ibG9nLnYxLkxpa2VCbG9nUmVxdWVzdBoZLmJsb2cudjEuTGlrZUJsb2dSZXNwb25zZSIEgLUYARJCCgdBZGRWaWV3EhcuYmxvZy52MS5BZGRWaWV3UmVxdWVzdBoYLmJsb2cudjEuQWRkVmlld1Jlc3BvbnNlIgSAtRgBEk4KC0dldENvbW1lbnRzEhsuYmxvZy52MS5HZXRDb21tZW50c1JlcXVlc3QaHC5ibG9nLnYxLkdldENvbW1lbnRzUmVzcG9uc2UiBIC1GAESSwoKQWRkQ29tbWVudBIaLmJsb2cudjEuQWRkQ29tbWVudFJlcXVlc3QaGy5ibG9nLnYxLkFkZENvbW1lbnRSZXNwb25zZSIEgLUYARJUCg1BZGRTdWJDb21tZW50Eh0uYmxvZy52MS5BZGRTdWJDb21tZW50UmVxdWVzdBoeLmJsb2cudjEuQWRkU3ViQ29tbWVudFJlc3BvbnNlIgSAtRgBEl0KEEdldFRyZW5kaW5nQmxvZ3MSIC5ibG9nLnYxLkdldFRyZW5kaW5nQmxvZ3NSZXF1ZXN0GiEuYmxvZy52MS5HZXRUcmVuZGluZ0Jsb2dzUmVzcG9uc2UiBIC1GAFClwEKC2NvbS5ibG9nLnYxQglCbG9nUHJvdG9QAVpAZ2l0aHViLmNvbS9Ba2FzaC1NYW5pa2FuZGFuL2Jsb2dnZXItc2VydmljZS9wcm90by9ibG9nL3YxO2Jsb2d2MaICA0JYWKoCB0Jsb2cuVjHKAgdCbG9nXFYx4gITQmxvZ1xWMVxHUEJNZXRhZGF0YeoCCEJsb2c6OlYxYgZwcm90bzM", [file_auth_v1_auth, file_user_v1_user]);
+  fileDesc("ChJibG9nL3YxL2Jsb2cucHJvdG8SB2Jsb2cudjEiMwoRQ3JlYXRlQmxvZ1JlcXVlc3QSDQoFdGl0bGUYASABKAkSDwoHY29udGVudBgCIAEoCSIxChJDcmVhdGVCbG9nUmVzcG9uc2USGwoEYmxvZxgBIAEoCzINLmJsb2cudjEuQmxvZyKzAQoEQmxvZxINCgV0aXRsZRgBIAEoCRIPCgdjb250ZW50GAIgASgJEh0KBmF1dGhvchgDIAEoCzINLnVzZXIudjEuVXNlchIKCgJpZBgEIAEoCRISCgpjcmVhdGVkX2F0GAUgASgJEhIKCnVwZGF0ZWRfYXQYBiABKAkSDQoFbGlrZXMYByABKAUSDQoFdmlld3MYCCABKAUSGgoEdGFncxgJIAMoCzIMLmJsb2cudjEuVGFnIrABChJCbG9nV2l0aG91dENvbnRlbnQSDQoFdGl0bGUYASABKAkSHQoGYXV0aG9yGAMgASgLMg0udXNlci52MS5Vc2VyEgoKAmlkGAQgASgJEhIKCmNyZWF0ZWRfYXQYBSABKAkSEgoKdXBkYXRlZF9hdBgGIAEoCRINCgVsaWtlcxgHIAEoBRINCgV2aWV3cxgIIAEoBRIaCgR0YWdzGAkgAygLMgwuYmxvZy52MS5UYWciHAoOR2V0QmxvZ1JlcXVlc3QSCgoCaWQYASABKAkiLgoPR2V0QmxvZ1Jlc3BvbnNlEhsKBGJsb2cYASABKAsyDS5ibG9nLnYxLkJsb2cibAoQTGlzdEJsb2dzUmVxdWVzdBITCgZmaWx0ZXIYASABKAlIAIgBARIRCgRwYWdlGAIgASgFSAGIAQESEgoFbGltaXQYAyABKAVIAogBAUIJCgdfZmlsdGVyQgcKBV9wYWdlQggKBl9saW1pdCI/ChFMaXN0QmxvZ3NSZXNwb25zZRIqCgVibG9ncxgBIAMoCzIbLmJsb2cudjEuQmxvZ1dpdGhvdXRDb250ZW50IiIKD0xpa2VCbG9nUmVxdWVzdBIPCgdibG9nX2lkGAEgASgJIiMKEExpa2VCbG9nUmVzcG9uc2USDwoHbWVzc2FnZRgBIAEoCSIhCg5BZGRWaWV3UmVxdWVzdBIPCgdibG9nX2lkGAEgASgJIiIKD0FkZFZpZXdSZXNwb25zZRIPCgdtZXNzYWdlGAEgASgJIjUKEUFkZENvbW1lbnRSZXF1ZXN0Eg8KB2Jsb2dfaWQYASABKAkSDwoHY29udGVudBgCIAEoCSI3ChJBZGRDb21tZW50UmVzcG9uc2USIQoHY29tbWVudBgBIAEoCzIQLmJsb2cudjEuQ29tbWVudCKJAQoHQ29tbWVudBIPCgdjb250ZW50GAEgASgJEg4KBmF1dGhvchgCIAEoCRISCgpjcmVhdGVkX2F0GAMgASgJEhIKCnVwZGF0ZWRfYXQYBCABKAkSDQoFbGlrZXMYBSABKAkSJgoMc3ViX2NvbW1lbnRzGAYgAygLMhAuYmxvZy52MS5Db21tZW50IkwKFEFkZFN1YkNvbW1lbnRSZXF1ZXN0Eg8KB2Jsb2dfaWQYASABKAkSEgoKY29tbWVudF9pZBgCIAEoCRIPCgdjb250ZW50GAMgASgJIjoKFUFkZFN1YkNvbW1lbnRSZXNwb25zZRIhCgdjb21tZW50GAEgASgLMhAuYmxvZy52MS5Db21tZW50In8KEkdldENvbW1lbnRzUmVxdWVzdBIPCgdibG9nX2lkGAEgASgJEhMKBmZpbHRlchgCIAEoCUgAiAEBEhEKBHBhZ2UYAyABKAVIAYgBARISCgVsaW1pdBgEIAEoBUgCiAEBQgkKB19maWx0ZXJCBwoFX3BhZ2VCCAoGX2xpbWl0IjkKE0dldENvbW1lbnRzUmVzcG9uc2USIgoIY29tbWVudHMYASADKAsyEC5ibG9nLnYxLkNvbW1lbnQiOwoXR2V0VHJlbmRpbmdCbG9nc1JlcXVlc3QSDQoFbGltaXQYASABKAUSEQoJdGltZWZyYW1lGAIgASgJIjgKGEdldFRyZW5kaW5nQmxvZ3NSZXNwb25zZRIcCgVibG9ncxgBIAMoCzINLmJsb2cudjEuQmxvZyJHCgNUYWcSCgoCaWQYASABKAkSDAoEbmFtZRgCIAEoCRISCgpjcmVhdGVkX2F0GAMgASgJEhIKCnVwZGF0ZWRfYXQYBCABKAkyxQUKC0Jsb2dTZXJ2aWNlEksKCkNyZWF0ZUJsb2cSGi5ibG9nLnYxLkNyZWF0ZUJsb2dSZXF1ZXN0GhsuYmxvZy52MS5DcmVhdGVCbG9nUmVzcG9uc2UiBIC1GAESQgoHR2V0QmxvZxIXLmJsb2cudjEuR2V0QmxvZ1JlcXVlc3QaGC5ibG9nLnYxLkdldEJsb2dSZXNwb25zZSIEgLUYARJICglMaXN0QmxvZ3MSGS5ibG9nLnYxLkxpc3RCbG9nc1JlcXVlc3QaGi5ibG9nLnYxLkxpc3RCbG9nc1Jlc3BvbnNlIgSAtRgBEkUKCExpa2VCbG9nEhguYmxvZy52MS5MaWtlQmxvZ1JlcXVlc3QaGS5ibG9nLnYxLkxpa2VCbG9nUmVzcG9uc2UiBIC1GAESQgoHQWRkVmlldxIXLmJsb2cudjEuQWRkVmlld1JlcXVlc3QaGC5ibG9nLnYxLkFkZFZpZXdSZXNwb25zZSIEgLUYARJOCgtHZXRDb21tZW50cxIbLmJsb2cudjEuR2V0Q29tbWVudHNSZXF1ZXN0GhwuYmxvZy52MS5HZXRDb21tZW50c1Jlc3BvbnNlIgSAtRgBEksKCkFkZENvbW1lbnQSGi5ibG9nLnYxLkFkZENvbW1lbnRSZXF1ZXN0GhsuYmxvZy52MS5BZGRDb21tZW50UmVzcG9uc2UiBIC1GAESVAoNQWRkU3ViQ29tbWVudBIdLmJsb2cudjEuQWRkU3ViQ29tbWVudFJlcXVlc3QaHi5ibG9nLnYxLkFkZFN1YkNvbW1lbnRSZXNwb25zZSIEgLUYARJdChBHZXRUcmVuZGluZ0Jsb2dzEiAuYmxvZy52MS5HZXRUcmVuZGluZ0Jsb2dzUmVxdWVzdBohLmJsb2cudjEuR2V0VHJlbmRpbmdCbG9nc1Jlc3BvbnNlIgSAtRgBQpcBCgtjb20uYmxvZy52MUIJQmxvZ1Byb3RvUAFaQGdpdGh1Yi5jb20vQWthc2gtTWFuaWthbmRhbi9ibG9nZ2VyLXNlcnZpY2UvcHJvdG8vYmxvZy92MTtibG9ndjGiAgNCWFiqAgdCbG9nLlYxygIHQmxvZ1xWMeICE0Jsb2dcVjFcR1BCTWV0YWRhdGHqAghCbG9nOjpWMWIGcHJvdG8z", [file_auth_v1_auth, file_user_v1_user]);
 
 /**
  * @generated from message blog.v1.CreateBlogRequest
@@ -112,6 +112,58 @@ export const BlogSchema: GenMessage<Blog> = /*@__PURE__*/
   messageDesc(file_blog_v1_blog, 2);
 
 /**
+ * @generated from message blog.v1.BlogWithoutContent
+ */
+export type BlogWithoutContent = Message<"blog.v1.BlogWithoutContent"> & {
+  /**
+   * @generated from field: string title = 1;
+   */
+  title: string;
+
+  /**
+   * @generated from field: user.v1.User author = 3;
+   */
+  author?: User;
+
+  /**
+   * @generated from field: string id = 4;
+   */
+  id: string;
+
+  /**
+   * @generated from field: string created_at = 5;
+   */
+  createdAt: string;
+
+  /**
+   * @generated from field: string updated_at = 6;
+   */
+  updatedAt: string;
+
+  /**
+   * @generated from field: int32 likes = 7;
+   */
+  likes: number;
+
+  /**
+   * @generated from field: int32 views = 8;
+   */
+  views: number;
+
+  /**
+   * @generated from field: repeated blog.v1.Tag tags = 9;
+   */
+  tags: Tag[];
+};
+
+/**
+ * Describes the message blog.v1.BlogWithoutContent.
+ * Use `create(BlogWithoutContentSchema)` to create a new message.
+ */
+export const BlogWithoutContentSchema: GenMessage<BlogWithoutContent> = /*@__PURE__*/
+  messageDesc(file_blog_v1_blog, 3);
+
+/**
  * @generated from message blog.v1.GetBlogRequest
  */
 export type GetBlogRequest = Message<"blog.v1.GetBlogRequest"> & {
@@ -126,7 +178,7 @@ export type GetBlogRequest = Message<"blog.v1.GetBlogRequest"> & {
  * Use `create(GetBlogRequestSchema)` to create a new message.
  */
 export const GetBlogRequestSchema: GenMessage<GetBlogRequest> = /*@__PURE__*/
-  messageDesc(file_blog_v1_blog, 3);
+  messageDesc(file_blog_v1_blog, 4);
 
 /**
  * @generated from message blog.v1.GetBlogResponse
@@ -143,7 +195,7 @@ export type GetBlogResponse = Message<"blog.v1.GetBlogResponse"> & {
  * Use `create(GetBlogResponseSchema)` to create a new message.
  */
 export const GetBlogResponseSchema: GenMessage<GetBlogResponse> = /*@__PURE__*/
-  messageDesc(file_blog_v1_blog, 4);
+  messageDesc(file_blog_v1_blog, 5);
 
 /**
  * @generated from message blog.v1.ListBlogsRequest
@@ -170,16 +222,16 @@ export type ListBlogsRequest = Message<"blog.v1.ListBlogsRequest"> & {
  * Use `create(ListBlogsRequestSchema)` to create a new message.
  */
 export const ListBlogsRequestSchema: GenMessage<ListBlogsRequest> = /*@__PURE__*/
-  messageDesc(file_blog_v1_blog, 5);
+  messageDesc(file_blog_v1_blog, 6);
 
 /**
  * @generated from message blog.v1.ListBlogsResponse
  */
 export type ListBlogsResponse = Message<"blog.v1.ListBlogsResponse"> & {
   /**
-   * @generated from field: repeated blog.v1.Blog blogs = 1;
+   * @generated from field: repeated blog.v1.BlogWithoutContent blogs = 1;
    */
-  blogs: Blog[];
+  blogs: BlogWithoutContent[];
 };
 
 /**
@@ -187,7 +239,7 @@ export type ListBlogsResponse = Message<"blog.v1.ListBlogsResponse"> & {
  * Use `create(ListBlogsResponseSchema)` to create a new message.
  */
 export const ListBlogsResponseSchema: GenMessage<ListBlogsResponse> = /*@__PURE__*/
-  messageDesc(file_blog_v1_blog, 6);
+  messageDesc(file_blog_v1_blog, 7);
 
 /**
  * @generated from message blog.v1.LikeBlogRequest
@@ -204,7 +256,7 @@ export type LikeBlogRequest = Message<"blog.v1.LikeBlogRequest"> & {
  * Use `create(LikeBlogRequestSchema)` to create a new message.
  */
 export const LikeBlogRequestSchema: GenMessage<LikeBlogRequest> = /*@__PURE__*/
-  messageDesc(file_blog_v1_blog, 7);
+  messageDesc(file_blog_v1_blog, 8);
 
 /**
  * @generated from message blog.v1.LikeBlogResponse
@@ -221,7 +273,7 @@ export type LikeBlogResponse = Message<"blog.v1.LikeBlogResponse"> & {
  * Use `create(LikeBlogResponseSchema)` to create a new message.
  */
 export const LikeBlogResponseSchema: GenMessage<LikeBlogResponse> = /*@__PURE__*/
-  messageDesc(file_blog_v1_blog, 8);
+  messageDesc(file_blog_v1_blog, 9);
 
 /**
  * @generated from message blog.v1.AddViewRequest
@@ -238,7 +290,7 @@ export type AddViewRequest = Message<"blog.v1.AddViewRequest"> & {
  * Use `create(AddViewRequestSchema)` to create a new message.
  */
 export const AddViewRequestSchema: GenMessage<AddViewRequest> = /*@__PURE__*/
-  messageDesc(file_blog_v1_blog, 9);
+  messageDesc(file_blog_v1_blog, 10);
 
 /**
  * @generated from message blog.v1.AddViewResponse
@@ -255,7 +307,7 @@ export type AddViewResponse = Message<"blog.v1.AddViewResponse"> & {
  * Use `create(AddViewResponseSchema)` to create a new message.
  */
 export const AddViewResponseSchema: GenMessage<AddViewResponse> = /*@__PURE__*/
-  messageDesc(file_blog_v1_blog, 10);
+  messageDesc(file_blog_v1_blog, 11);
 
 /**
  * @generated from message blog.v1.AddCommentRequest
@@ -277,7 +329,7 @@ export type AddCommentRequest = Message<"blog.v1.AddCommentRequest"> & {
  * Use `create(AddCommentRequestSchema)` to create a new message.
  */
 export const AddCommentRequestSchema: GenMessage<AddCommentRequest> = /*@__PURE__*/
-  messageDesc(file_blog_v1_blog, 11);
+  messageDesc(file_blog_v1_blog, 12);
 
 /**
  * @generated from message blog.v1.AddCommentResponse
@@ -294,7 +346,7 @@ export type AddCommentResponse = Message<"blog.v1.AddCommentResponse"> & {
  * Use `create(AddCommentResponseSchema)` to create a new message.
  */
 export const AddCommentResponseSchema: GenMessage<AddCommentResponse> = /*@__PURE__*/
-  messageDesc(file_blog_v1_blog, 12);
+  messageDesc(file_blog_v1_blog, 13);
 
 /**
  * @generated from message blog.v1.Comment
@@ -336,7 +388,7 @@ export type Comment = Message<"blog.v1.Comment"> & {
  * Use `create(CommentSchema)` to create a new message.
  */
 export const CommentSchema: GenMessage<Comment> = /*@__PURE__*/
-  messageDesc(file_blog_v1_blog, 13);
+  messageDesc(file_blog_v1_blog, 14);
 
 /**
  * @generated from message blog.v1.AddSubCommentRequest
@@ -363,7 +415,7 @@ export type AddSubCommentRequest = Message<"blog.v1.AddSubCommentRequest"> & {
  * Use `create(AddSubCommentRequestSchema)` to create a new message.
  */
 export const AddSubCommentRequestSchema: GenMessage<AddSubCommentRequest> = /*@__PURE__*/
-  messageDesc(file_blog_v1_blog, 14);
+  messageDesc(file_blog_v1_blog, 15);
 
 /**
  * @generated from message blog.v1.AddSubCommentResponse
@@ -380,7 +432,7 @@ export type AddSubCommentResponse = Message<"blog.v1.AddSubCommentResponse"> & {
  * Use `create(AddSubCommentResponseSchema)` to create a new message.
  */
 export const AddSubCommentResponseSchema: GenMessage<AddSubCommentResponse> = /*@__PURE__*/
-  messageDesc(file_blog_v1_blog, 15);
+  messageDesc(file_blog_v1_blog, 16);
 
 /**
  * @generated from message blog.v1.GetCommentsRequest
@@ -412,7 +464,7 @@ export type GetCommentsRequest = Message<"blog.v1.GetCommentsRequest"> & {
  * Use `create(GetCommentsRequestSchema)` to create a new message.
  */
 export const GetCommentsRequestSchema: GenMessage<GetCommentsRequest> = /*@__PURE__*/
-  messageDesc(file_blog_v1_blog, 16);
+  messageDesc(file_blog_v1_blog, 17);
 
 /**
  * @generated from message blog.v1.GetCommentsResponse
@@ -429,7 +481,7 @@ export type GetCommentsResponse = Message<"blog.v1.GetCommentsResponse"> & {
  * Use `create(GetCommentsResponseSchema)` to create a new message.
  */
 export const GetCommentsResponseSchema: GenMessage<GetCommentsResponse> = /*@__PURE__*/
-  messageDesc(file_blog_v1_blog, 17);
+  messageDesc(file_blog_v1_blog, 18);
 
 /**
  * @generated from message blog.v1.GetTrendingBlogsRequest
@@ -453,7 +505,7 @@ export type GetTrendingBlogsRequest = Message<"blog.v1.GetTrendingBlogsRequest">
  * Use `create(GetTrendingBlogsRequestSchema)` to create a new message.
  */
 export const GetTrendingBlogsRequestSchema: GenMessage<GetTrendingBlogsRequest> = /*@__PURE__*/
-  messageDesc(file_blog_v1_blog, 18);
+  messageDesc(file_blog_v1_blog, 19);
 
 /**
  * @generated from message blog.v1.GetTrendingBlogsResponse
@@ -470,7 +522,7 @@ export type GetTrendingBlogsResponse = Message<"blog.v1.GetTrendingBlogsResponse
  * Use `create(GetTrendingBlogsResponseSchema)` to create a new message.
  */
 export const GetTrendingBlogsResponseSchema: GenMessage<GetTrendingBlogsResponse> = /*@__PURE__*/
-  messageDesc(file_blog_v1_blog, 19);
+  messageDesc(file_blog_v1_blog, 20);
 
 /**
  * @generated from message blog.v1.Tag
@@ -502,7 +554,7 @@ export type Tag = Message<"blog.v1.Tag"> & {
  * Use `create(TagSchema)` to create a new message.
  */
 export const TagSchema: GenMessage<Tag> = /*@__PURE__*/
-  messageDesc(file_blog_v1_blog, 20);
+  messageDesc(file_blog_v1_blog, 21);
 
 /**
  * @generated from service blog.v1.BlogService

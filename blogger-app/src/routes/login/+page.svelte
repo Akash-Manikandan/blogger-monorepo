@@ -6,20 +6,17 @@
 	import { type SuperValidated, type Infer, superForm } from 'sveltekit-superforms';
 	import { zodClient } from 'sveltekit-superforms/adapters';
 	import { toast } from 'svelte-sonner';
-	import { goto } from '$app/navigation';
 
 	let { data }: { data: { form: SuperValidated<Infer<FormSchema>> } } = $props();
 	const form = superForm(data.form, {
 		validators: zodClient(formSchema),
 		onResult({ result }) {
             const { status, data } = result as any;
-			console.log(data)
 			if (status >= 400 && status < 600) {
 				toast.error(data?.error ?? "An error occurred");
 			} else {
-                toast.success("Login successful");
-                goto("/dashboard");
-            }
+				toast.success("Login successful");
+			}
 		}
 	});
 

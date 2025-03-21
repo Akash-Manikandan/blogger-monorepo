@@ -58,6 +58,16 @@ message Blog {
   repeated Tag tags = 9;
 }
 
+message BlogWithoutContent {
+  string title = 1;
+  user.v1.User author = 3;
+  string id = 4;
+  string created_at = 5;
+  string updated_at = 6;
+  int32 likes = 7;
+  int32 views = 8;
+  repeated Tag tags = 9;
+}
 message GetBlogRequest {
   string id = 1;
 }
@@ -73,7 +83,7 @@ message ListBlogsRequest {
 }
 
 message ListBlogsResponse {
-  repeated Blog blogs = 1;
+  repeated BlogWithoutContent blogs = 1;
 }
 
 message LikeBlogRequest {

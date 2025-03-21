@@ -20,11 +20,10 @@
 		userName
 	}: { menuItems: MenuItem[]; currentPath: string; userName: string } = $props();
 	const sidebar = useSidebar();
-	const avatar = createAvatar(initials, {
+	const svg = $derived(createAvatar(initials, {
 		seed: userName
-	});
+	}).toDataUri());
 
-	const svg = avatar.toDataUri();
 </script>
 
 <Sidebar.Root variant="inset" collapsible="icon">

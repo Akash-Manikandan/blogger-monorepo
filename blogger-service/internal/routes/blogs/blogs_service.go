@@ -95,11 +95,10 @@ func ListBlogsService(DB *gorm.DB, req *pb.ListBlogsRequest, userId string) (*pb
 		return nil, status.Errorf(codes.NotFound, "blogs not found: %v", err)
 	}
 
-	var blogResponses []*pb.Blog
+	var blogResponses []*pb.BlogWithoutContent
 	for _, blog := range blogs {
-		blogResponses = append(blogResponses, &pb.Blog{
-			Title:   blog.Title,
-			Content: blog.Content,
+		blogResponses = append(blogResponses, &pb.BlogWithoutContent{
+			Title: blog.Title,
 			Author: &userPb.User{
 				Id:       blog.User.ID,
 				Username: blog.User.Username,
