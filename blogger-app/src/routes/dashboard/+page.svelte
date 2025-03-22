@@ -7,7 +7,7 @@
 </script>
 
 <Table.Root>
-	<Table.Caption>A list of your recent invoices.</Table.Caption>
+	<Table.Caption>A list of your recent blogs.</Table.Caption>
 	<Table.Header>
 		<Table.Row>
 			<Table.Head>Blog Title</Table.Head>
