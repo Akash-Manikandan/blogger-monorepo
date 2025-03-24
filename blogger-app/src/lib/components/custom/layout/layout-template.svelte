@@ -32,12 +32,14 @@
 	let { children, currentPath, userName } = $props();
 </script>
 
-<Sidebar.Provider class="font-display">
+<Sidebar.Provider class="font-display h-screen overflow-hidden">
 	<AppSidebar {menuItems} {currentPath} {userName} />
-	<main class="bg-primary-foreground m-2 w-full overflow-scroll rounded-xl">
-		<Sidebar.Trigger class="m-2" />
-		<div class="m-2">
-			{@render children?.()}
+	<main class="bg-primary-foreground m-2 w-full h-screen rounded-xl">
+		<div class="h-full overflow-scroll">
+			<div class="mx-2 my-4">
+				<Sidebar.Trigger class="m-2" />
+				{@render children?.()}
+			</div>
 		</div>
 	</main>
 </Sidebar.Provider>

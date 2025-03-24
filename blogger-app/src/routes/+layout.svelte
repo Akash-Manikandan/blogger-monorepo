@@ -23,7 +23,9 @@
 {#if Object.values(PUBLIC_ROUTES).includes(page.url.pathname)}
 	{@render children?.()}
 {:else}
-	<LayoutTemplate {children} currentPath={page.url.pathname} userName={userName} />
+	<main class="overflow-hidden">
+		<LayoutTemplate {children} currentPath={page.url.pathname} {userName} />
+	</main>
 {/if}
 
 <Toaster />
