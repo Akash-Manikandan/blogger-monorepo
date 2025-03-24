@@ -20,7 +20,7 @@
 	<Table.Body>
 		{#each data.blogs as blog}
 			<Table.Row>
-				<Table.Cell class="font-medium">{blog.title}</Table.Cell>
+				<Table.Cell class="font-medium"><a href={`/dashboard/blog/${blog.id}`}>{blog.title}</a></Table.Cell>
 				<Table.Cell>{blog.author.username}</Table.Cell>
 				<Table.Cell>{convertToUTCAndFormat(blog.createdAt)}</Table.Cell>
 				<Table.Cell>{convertToUTCAndFormat(blog.updatedAt)}</Table.Cell>
