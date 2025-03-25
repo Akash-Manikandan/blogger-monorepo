@@ -5,11 +5,16 @@
 	import { convertToUTCAndFormat } from '$lib/utils/date';
 	import Trash from '@lucide/svelte/icons/trash-2';
 	import PlusIcon from '@lucide/svelte/icons/plus';
+	import { goto } from '$app/navigation';
 	let { data }: PageProps = $props();
+
+	const createBlog = () => {
+		goto('/dashboard/blog/');
+	};
 </script>
 
 <main class="flex flex-col gap-8 mt-8">
-	<Button class="w-fit">
+	<Button class="w-fit" onclick={createBlog}>
 		<PlusIcon class="mr-2" />
 		Create Blog
 	</Button>
