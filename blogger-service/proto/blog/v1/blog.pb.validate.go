@@ -1109,6 +1109,455 @@ var _ interface {
 	ErrorName() string
 } = ListBlogsResponseValidationError{}
 
+// Validate checks the field values on UpdateBlogRequest with the rules defined
+// in the proto definition for this message. If any rules are violated, the
+// first error encountered is returned, or nil if there are no violations.
+func (m *UpdateBlogRequest) Validate() error {
+	return m.validate(false)
+}
+
+// ValidateAll checks the field values on UpdateBlogRequest with the rules
+// defined in the proto definition for this message. If any rules are
+// violated, the result is a list of violation errors wrapped in
+// UpdateBlogRequestMultiError, or nil if none found.
+func (m *UpdateBlogRequest) ValidateAll() error {
+	return m.validate(true)
+}
+
+func (m *UpdateBlogRequest) validate(all bool) error {
+	if m == nil {
+		return nil
+	}
+
+	var errors []error
+
+	// no validation rules for Id
+
+	// no validation rules for Title
+
+	// no validation rules for Content
+
+	// no validation rules for IsPublic
+
+	if len(errors) > 0 {
+		return UpdateBlogRequestMultiError(errors)
+	}
+
+	return nil
+}
+
+// UpdateBlogRequestMultiError is an error wrapping multiple validation errors
+// returned by UpdateBlogRequest.ValidateAll() if the designated constraints
+// aren't met.
+type UpdateBlogRequestMultiError []error
+
+// Error returns a concatenation of all the error messages it wraps.
+func (m UpdateBlogRequestMultiError) Error() string {
+	msgs := make([]string, 0, len(m))
+	for _, err := range m {
+		msgs = append(msgs, err.Error())
+	}
+	return strings.Join(msgs, "; ")
+}
+
+// AllErrors returns a list of validation violation errors.
+func (m UpdateBlogRequestMultiError) AllErrors() []error { return m }
+
+// UpdateBlogRequestValidationError is the validation error returned by
+// UpdateBlogRequest.Validate if the designated constraints aren't met.
+type UpdateBlogRequestValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e UpdateBlogRequestValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e UpdateBlogRequestValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e UpdateBlogRequestValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e UpdateBlogRequestValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e UpdateBlogRequestValidationError) ErrorName() string {
+	return "UpdateBlogRequestValidationError"
+}
+
+// Error satisfies the builtin error interface
+func (e UpdateBlogRequestValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sUpdateBlogRequest.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = UpdateBlogRequestValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = UpdateBlogRequestValidationError{}
+
+// Validate checks the field values on UpdateBlogResponse with the rules
+// defined in the proto definition for this message. If any rules are
+// violated, the first error encountered is returned, or nil if there are no violations.
+func (m *UpdateBlogResponse) Validate() error {
+	return m.validate(false)
+}
+
+// ValidateAll checks the field values on UpdateBlogResponse with the rules
+// defined in the proto definition for this message. If any rules are
+// violated, the result is a list of violation errors wrapped in
+// UpdateBlogResponseMultiError, or nil if none found.
+func (m *UpdateBlogResponse) ValidateAll() error {
+	return m.validate(true)
+}
+
+func (m *UpdateBlogResponse) validate(all bool) error {
+	if m == nil {
+		return nil
+	}
+
+	var errors []error
+
+	if all {
+		switch v := interface{}(m.GetBlog()).(type) {
+		case interface{ ValidateAll() error }:
+			if err := v.ValidateAll(); err != nil {
+				errors = append(errors, UpdateBlogResponseValidationError{
+					field:  "Blog",
+					reason: "embedded message failed validation",
+					cause:  err,
+				})
+			}
+		case interface{ Validate() error }:
+			if err := v.Validate(); err != nil {
+				errors = append(errors, UpdateBlogResponseValidationError{
+					field:  "Blog",
+					reason: "embedded message failed validation",
+					cause:  err,
+				})
+			}
+		}
+	} else if v, ok := interface{}(m.GetBlog()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return UpdateBlogResponseValidationError{
+				field:  "Blog",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	if len(errors) > 0 {
+		return UpdateBlogResponseMultiError(errors)
+	}
+
+	return nil
+}
+
+// UpdateBlogResponseMultiError is an error wrapping multiple validation errors
+// returned by UpdateBlogResponse.ValidateAll() if the designated constraints
+// aren't met.
+type UpdateBlogResponseMultiError []error
+
+// Error returns a concatenation of all the error messages it wraps.
+func (m UpdateBlogResponseMultiError) Error() string {
+	msgs := make([]string, 0, len(m))
+	for _, err := range m {
+		msgs = append(msgs, err.Error())
+	}
+	return strings.Join(msgs, "; ")
+}
+
+// AllErrors returns a list of validation violation errors.
+func (m UpdateBlogResponseMultiError) AllErrors() []error { return m }
+
+// UpdateBlogResponseValidationError is the validation error returned by
+// UpdateBlogResponse.Validate if the designated constraints aren't met.
+type UpdateBlogResponseValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e UpdateBlogResponseValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e UpdateBlogResponseValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e UpdateBlogResponseValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e UpdateBlogResponseValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e UpdateBlogResponseValidationError) ErrorName() string {
+	return "UpdateBlogResponseValidationError"
+}
+
+// Error satisfies the builtin error interface
+func (e UpdateBlogResponseValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sUpdateBlogResponse.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = UpdateBlogResponseValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = UpdateBlogResponseValidationError{}
+
+// Validate checks the field values on DeleteBlogRequest with the rules defined
+// in the proto definition for this message. If any rules are violated, the
+// first error encountered is returned, or nil if there are no violations.
+func (m *DeleteBlogRequest) Validate() error {
+	return m.validate(false)
+}
+
+// ValidateAll checks the field values on DeleteBlogRequest with the rules
+// defined in the proto definition for this message. If any rules are
+// violated, the result is a list of violation errors wrapped in
+// DeleteBlogRequestMultiError, or nil if none found.
+func (m *DeleteBlogRequest) ValidateAll() error {
+	return m.validate(true)
+}
+
+func (m *DeleteBlogRequest) validate(all bool) error {
+	if m == nil {
+		return nil
+	}
+
+	var errors []error
+
+	// no validation rules for Id
+
+	if len(errors) > 0 {
+		return DeleteBlogRequestMultiError(errors)
+	}
+
+	return nil
+}
+
+// DeleteBlogRequestMultiError is an error wrapping multiple validation errors
+// returned by DeleteBlogRequest.ValidateAll() if the designated constraints
+// aren't met.
+type DeleteBlogRequestMultiError []error
+
+// Error returns a concatenation of all the error messages it wraps.
+func (m DeleteBlogRequestMultiError) Error() string {
+	msgs := make([]string, 0, len(m))
+	for _, err := range m {
+		msgs = append(msgs, err.Error())
+	}
+	return strings.Join(msgs, "; ")
+}
+
+// AllErrors returns a list of validation violation errors.
+func (m DeleteBlogRequestMultiError) AllErrors() []error { return m }
+
+// DeleteBlogRequestValidationError is the validation error returned by
+// DeleteBlogRequest.Validate if the designated constraints aren't met.
+type DeleteBlogRequestValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e DeleteBlogRequestValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e DeleteBlogRequestValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e DeleteBlogRequestValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e DeleteBlogRequestValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e DeleteBlogRequestValidationError) ErrorName() string {
+	return "DeleteBlogRequestValidationError"
+}
+
+// Error satisfies the builtin error interface
+func (e DeleteBlogRequestValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sDeleteBlogRequest.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = DeleteBlogRequestValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = DeleteBlogRequestValidationError{}
+
+// Validate checks the field values on DeleteBlogResponse with the rules
+// defined in the proto definition for this message. If any rules are
+// violated, the first error encountered is returned, or nil if there are no violations.
+func (m *DeleteBlogResponse) Validate() error {
+	return m.validate(false)
+}
+
+// ValidateAll checks the field values on DeleteBlogResponse with the rules
+// defined in the proto definition for this message. If any rules are
+// violated, the result is a list of violation errors wrapped in
+// DeleteBlogResponseMultiError, or nil if none found.
+func (m *DeleteBlogResponse) ValidateAll() error {
+	return m.validate(true)
+}
+
+func (m *DeleteBlogResponse) validate(all bool) error {
+	if m == nil {
+		return nil
+	}
+
+	var errors []error
+
+	// no validation rules for Message
+
+	if len(errors) > 0 {
+		return DeleteBlogResponseMultiError(errors)
+	}
+
+	return nil
+}
+
+// DeleteBlogResponseMultiError is an error wrapping multiple validation errors
+// returned by DeleteBlogResponse.ValidateAll() if the designated constraints
+// aren't met.
+type DeleteBlogResponseMultiError []error
+
+// Error returns a concatenation of all the error messages it wraps.
+func (m DeleteBlogResponseMultiError) Error() string {
+	msgs := make([]string, 0, len(m))
+	for _, err := range m {
+		msgs = append(msgs, err.Error())
+	}
+	return strings.Join(msgs, "; ")
+}
+
+// AllErrors returns a list of validation violation errors.
+func (m DeleteBlogResponseMultiError) AllErrors() []error { return m }
+
+// DeleteBlogResponseValidationError is the validation error returned by
+// DeleteBlogResponse.Validate if the designated constraints aren't met.
+type DeleteBlogResponseValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e DeleteBlogResponseValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e DeleteBlogResponseValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e DeleteBlogResponseValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e DeleteBlogResponseValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e DeleteBlogResponseValidationError) ErrorName() string {
+	return "DeleteBlogResponseValidationError"
+}
+
+// Error satisfies the builtin error interface
+func (e DeleteBlogResponseValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sDeleteBlogResponse.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = DeleteBlogResponseValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = DeleteBlogResponseValidationError{}
+
 // Validate checks the field values on LikeBlogRequest with the rules defined
 // in the proto definition for this message. If any rules are violated, the
 // first error encountered is returned, or nil if there are no violations.

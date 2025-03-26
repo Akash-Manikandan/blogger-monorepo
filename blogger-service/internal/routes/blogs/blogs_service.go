@@ -120,3 +120,63 @@ func ListBlogsService(DB *gorm.DB, req *pb.ListBlogsRequest, userId string) (*pb
 		Blogs: blogResponses,
 	}, nil
 }
+
+func UpdateBlogService(DB *gorm.DB, req *pb.UpdateBlogRequest, userId string) (*pb.UpdateBlogResponse, error) {
+	var blog models.Blog
+	err := DB.Preload("User").Where("id = ? AND user_id = ?", req.Id, userId).First(&blog).Error
+
+	if err != nil {
+		if errors.Is(err, gorm.ErrRecordNotFound) {
+			return nil, status.Errorf(codes.NotFound, "blog not found")
+		}
+		return nil, status.Errorf(codes.Internal, "database error: %v", err)
+	}
+
+	blog.Title = req.GetTitle()
+	blog.Content = req.GetContent()
+	blog.IsPublic = req.GetIsPublic()
+
+	err = DB.Save(&blog).Error
+	if err != nil {
+		return nil, status.Errorf(codes.Internal, "database error: %v", err)
+	}
+
+	return &pb.UpdateBlogResponse{
+		Blog: &pb.Blog{
+			Title:   blog.Title,
+			Content: blog.Content,
+			Author: &userPb.User{
+				Id:       blog.User.ID,
+				Username: blog.User.Username,
+				Email:    blog.User.Email,
+			},
+			Id:        blog.ID,
+			Views:     int32(blog.ViewCount),
+			Likes:     int32(blog.TrendingCount),
+			IsPublic:  blog.IsPublic,
+			CreatedAt: blog.CreatedAt.String(),
+			UpdatedAt: blog.UpdatedAt.String(),
+		},
+	}, nil
+}
+
+func DeleteBlogService(DB *gorm.DB, req *pb.DeleteBlogRequest, userId string) (*pb.DeleteBlogResponse, error) {
+	var blog models.Blog
+	err := DB.Preload("User").Where("id = ? AND user_id = ?", req.Id, userId).First(&blog).Error
+
+	if err != nil {
+		if errors.Is(err, gorm.ErrRecordNotFound) {
+			return nil, status.Errorf(codes.NotFound, "blog not found")
+		}
+		return nil, status.Errorf(codes.Internal, "database error: %v", err)
+	}
+
+	err = DB.Delete(&blog).Error
+	if err != nil {
+		return nil, status.Errorf(codes.Internal, "database error: %v", err)
+	}
+
+	return &pb.DeleteBlogResponse{
+		Message: "Blog deleted successfully",
+	}, nil
+}

@@ -17,6 +17,14 @@ service BlogService {
   rpc ListBlogs(ListBlogsRequest) returns (ListBlogsResponse) {
     option (auth.v1.requires_auth) = true;
   };
+  // PUT the blog entirely
+  rpc UpdateBlog(UpdateBlogRequest) returns (UpdateBlogResponse) {
+    option (auth.v1.requires_auth) = true;
+  };
+  // DELETE the blog
+  rpc DeleteBlog(DeleteBlogRequest) returns (DeleteBlogResponse) {
+    option (auth.v1.requires_auth) = true;
+  };
   rpc LikeBlog(LikeBlogRequest) returns (LikeBlogResponse) {
     option (auth.v1.requires_auth) = true;
   };
@@ -87,6 +95,25 @@ message ListBlogsRequest {
 
 message ListBlogsResponse {
   repeated BlogWithoutContent blogs = 1;
+}
+
+message UpdateBlogRequest {
+  string id = 1;
+  string title = 2;
+  string content = 3;
+  bool is_public = 4;
+}
+
+message UpdateBlogResponse {
+  Blog blog = 1;
+}
+
+message DeleteBlogRequest {
+  string id = 1;
+}
+
+message DeleteBlogResponse {
+  string message = 1;
 }
 
 message LikeBlogRequest {

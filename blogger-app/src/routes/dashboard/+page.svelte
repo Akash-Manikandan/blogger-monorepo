@@ -5,12 +5,24 @@
 	import { convertToUTCAndFormat } from '$lib/utils/date';
 	import Trash from '@lucide/svelte/icons/trash-2';
 	import PlusIcon from '@lucide/svelte/icons/plus';
-	import { goto } from '$app/navigation';
+	import { goto, invalidateAll } from '$app/navigation';
+	import { toast } from 'svelte-sonner';
 	let { data }: PageProps = $props();
 
 	const createBlog = () => {
 		goto('/dashboard/blog/');
 	};
+
+	const deleteBlog = async (blogId: string) => {
+		const request = await fetch(`/api/v1/blogs/delete`, {
+			method: 'POST',
+			body: JSON.stringify({ id: blogId })
+		});
+		const response = await request.json();
+		toast.success(response.message);
+		invalidateAll();
+	};
+
 </script>
 
 <main class="flex flex-col gap-8 mt-8">
@@ -38,7 +50,7 @@
 					<Table.Cell>{blog.author.username}</Table.Cell>
 					<Table.Cell>{convertToUTCAndFormat(blog.createdAt)}</Table.Cell>
 					<Table.Cell>{convertToUTCAndFormat(blog.updatedAt)}</Table.Cell>
-					<Table.Cell class="flex justify-center"><Trash size={16} /></Table.Cell>
+					<Table.Cell class="flex justify-center"><Trash size={16} class="cursor-pointer" onclick={() => deleteBlog(blog.id)} /></Table.Cell>
 				</Table.Row>
 			{/each}
 		</Table.Body>

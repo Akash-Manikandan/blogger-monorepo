@@ -43,3 +43,19 @@ func (s *BlogServer) ListBlogs(ctx context.Context, req *pb.ListBlogsRequest) (*
 	}
 	return ListBlogsService(s.DB, req, userID)
 }
+
+func (s *BlogServer) UpdateBlog(ctx context.Context, req *pb.UpdateBlogRequest) (*pb.UpdateBlogResponse, error) {
+	userID, ok := utils.GetUserID(ctx)
+	if !ok {
+		return nil, status.Errorf(codes.Unauthenticated, "Unauthorized")
+	}
+	return UpdateBlogService(s.DB, req, userID)
+}
+
+func (s *BlogServer) DeleteBlog(ctx context.Context, req *pb.DeleteBlogRequest) (*pb.DeleteBlogResponse, error) {
+	userID, ok := utils.GetUserID(ctx)
+	if !ok {
+		return nil, status.Errorf(codes.Unauthenticated, "Unauthorized")
+	}
+	return DeleteBlogService(s.DB, req, userID)
+}

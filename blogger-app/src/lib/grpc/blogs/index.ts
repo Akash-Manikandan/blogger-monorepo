@@ -10,5 +10,6 @@ const transport = createGrpcTransport({
 
 export const blogClient = {
     listBlogs: createClient(BlogService, transport).listBlogs,
-    getBlog: createClient(BlogService, transport).getBlog
+    getBlog: createClient(BlogService, transport).getBlog,
+    deleteBlog: createClient(BlogService, transport).deleteBlog
 };

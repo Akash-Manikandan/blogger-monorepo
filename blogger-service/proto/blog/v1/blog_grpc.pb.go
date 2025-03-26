@@ -22,6 +22,8 @@ const (
 	BlogService_CreateBlog_FullMethodName       = "/blog.v1.BlogService/CreateBlog"
 	BlogService_GetBlog_FullMethodName          = "/blog.v1.BlogService/GetBlog"
 	BlogService_ListBlogs_FullMethodName        = "/blog.v1.BlogService/ListBlogs"
+	BlogService_UpdateBlog_FullMethodName       = "/blog.v1.BlogService/UpdateBlog"
+	BlogService_DeleteBlog_FullMethodName       = "/blog.v1.BlogService/DeleteBlog"
 	BlogService_LikeBlog_FullMethodName         = "/blog.v1.BlogService/LikeBlog"
 	BlogService_AddView_FullMethodName          = "/blog.v1.BlogService/AddView"
 	BlogService_GetComments_FullMethodName      = "/blog.v1.BlogService/GetComments"
@@ -37,6 +39,10 @@ type BlogServiceClient interface {
 	CreateBlog(ctx context.Context, in *CreateBlogRequest, opts ...grpc.CallOption) (*CreateBlogResponse, error)
 	GetBlog(ctx context.Context, in *GetBlogRequest, opts ...grpc.CallOption) (*GetBlogResponse, error)
 	ListBlogs(ctx context.Context, in *ListBlogsRequest, opts ...grpc.CallOption) (*ListBlogsResponse, error)
+	// PUT the blog entirely
+	UpdateBlog(ctx context.Context, in *UpdateBlogRequest, opts ...grpc.CallOption) (*UpdateBlogResponse, error)
+	// DELETE the blog
+	DeleteBlog(ctx context.Context, in *DeleteBlogRequest, opts ...grpc.CallOption) (*DeleteBlogResponse, error)
 	LikeBlog(ctx context.Context, in *LikeBlogRequest, opts ...grpc.CallOption) (*LikeBlogResponse, error)
 	AddView(ctx context.Context, in *AddViewRequest, opts ...grpc.CallOption) (*AddViewResponse, error)
 	GetComments(ctx context.Context, in *GetCommentsRequest, opts ...grpc.CallOption) (*GetCommentsResponse, error)
@@ -77,6 +83,26 @@ func (c *blogServiceClient) ListBlogs(ctx context.Context, in *ListBlogsRequest,
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(ListBlogsResponse)
 	err := c.cc.Invoke(ctx, BlogService_ListBlogs_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *blogServiceClient) UpdateBlog(ctx context.Context, in *UpdateBlogRequest, opts ...grpc.CallOption) (*UpdateBlogResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpdateBlogResponse)
+	err := c.cc.Invoke(ctx, BlogService_UpdateBlog_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *blogServiceClient) DeleteBlog(ctx context.Context, in *DeleteBlogRequest, opts ...grpc.CallOption) (*DeleteBlogResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(DeleteBlogResponse)
+	err := c.cc.Invoke(ctx, BlogService_DeleteBlog_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
@@ -150,6 +176,10 @@ type BlogServiceServer interface {
 	CreateBlog(context.Context, *CreateBlogRequest) (*CreateBlogResponse, error)
 	GetBlog(context.Context, *GetBlogRequest) (*GetBlogResponse, error)
 	ListBlogs(context.Context, *ListBlogsRequest) (*ListBlogsResponse, error)
+	// PUT the blog entirely
+	UpdateBlog(context.Context, *UpdateBlogRequest) (*UpdateBlogResponse, error)
+	// DELETE the blog
+	DeleteBlog(context.Context, *DeleteBlogRequest) (*DeleteBlogResponse, error)
 	LikeBlog(context.Context, *LikeBlogRequest) (*LikeBlogResponse, error)
 	AddView(context.Context, *AddViewRequest) (*AddViewResponse, error)
 	GetComments(context.Context, *GetCommentsRequest) (*GetCommentsResponse, error)
@@ -174,6 +204,12 @@ func (UnimplementedBlogServiceServer) GetBlog(context.Context, *GetBlogRequest) 
 }
 func (UnimplementedBlogServiceServer) ListBlogs(context.Context, *ListBlogsRequest) (*ListBlogsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListBlogs not implemented")
+}
+func (UnimplementedBlogServiceServer) UpdateBlog(context.Context, *UpdateBlogRequest) (*UpdateBlogResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateBlog not implemented")
+}
+func (UnimplementedBlogServiceServer) DeleteBlog(context.Context, *DeleteBlogRequest) (*DeleteBlogResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteBlog not implemented")
 }
 func (UnimplementedBlogServiceServer) LikeBlog(context.Context, *LikeBlogRequest) (*LikeBlogResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method LikeBlog not implemented")
@@ -264,6 +300,42 @@ func _BlogService_ListBlogs_Handler(srv interface{}, ctx context.Context, dec fu
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(BlogServiceServer).ListBlogs(ctx, req.(*ListBlogsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _BlogService_UpdateBlog_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateBlogRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(BlogServiceServer).UpdateBlog(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: BlogService_UpdateBlog_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(BlogServiceServer).UpdateBlog(ctx, req.(*UpdateBlogRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _BlogService_DeleteBlog_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteBlogRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(BlogServiceServer).DeleteBlog(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: BlogService_DeleteBlog_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(BlogServiceServer).DeleteBlog(ctx, req.(*DeleteBlogRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -394,6 +466,14 @@ var BlogService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ListBlogs",
 			Handler:    _BlogService_ListBlogs_Handler,
+		},
+		{
+			MethodName: "UpdateBlog",
+			Handler:    _BlogService_UpdateBlog_Handler,
+		},
+		{
+			MethodName: "DeleteBlog",
+			Handler:    _BlogService_DeleteBlog_Handler,
 		},
 		{
 			MethodName: "LikeBlog",

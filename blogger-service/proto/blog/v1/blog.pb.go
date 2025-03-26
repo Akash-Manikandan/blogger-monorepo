@@ -543,6 +543,206 @@ func (x *ListBlogsResponse) GetBlogs() []*BlogWithoutContent {
 	return nil
 }
 
+type UpdateBlogRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Title         string                 `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
+	Content       string                 `protobuf:"bytes,3,opt,name=content,proto3" json:"content,omitempty"`
+	IsPublic      bool                   `protobuf:"varint,4,opt,name=is_public,json=isPublic,proto3" json:"is_public,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *UpdateBlogRequest) Reset() {
+	*x = UpdateBlogRequest{}
+	mi := &file_blog_v1_blog_proto_msgTypes[8]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpdateBlogRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdateBlogRequest) ProtoMessage() {}
+
+func (x *UpdateBlogRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_blog_v1_blog_proto_msgTypes[8]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdateBlogRequest.ProtoReflect.Descriptor instead.
+func (*UpdateBlogRequest) Descriptor() ([]byte, []int) {
+	return file_blog_v1_blog_proto_rawDescGZIP(), []int{8}
+}
+
+func (x *UpdateBlogRequest) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *UpdateBlogRequest) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *UpdateBlogRequest) GetContent() string {
+	if x != nil {
+		return x.Content
+	}
+	return ""
+}
+
+func (x *UpdateBlogRequest) GetIsPublic() bool {
+	if x != nil {
+		return x.IsPublic
+	}
+	return false
+}
+
+type UpdateBlogResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Blog          *Blog                  `protobuf:"bytes,1,opt,name=blog,proto3" json:"blog,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *UpdateBlogResponse) Reset() {
+	*x = UpdateBlogResponse{}
+	mi := &file_blog_v1_blog_proto_msgTypes[9]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpdateBlogResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdateBlogResponse) ProtoMessage() {}
+
+func (x *UpdateBlogResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_blog_v1_blog_proto_msgTypes[9]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdateBlogResponse.ProtoReflect.Descriptor instead.
+func (*UpdateBlogResponse) Descriptor() ([]byte, []int) {
+	return file_blog_v1_blog_proto_rawDescGZIP(), []int{9}
+}
+
+func (x *UpdateBlogResponse) GetBlog() *Blog {
+	if x != nil {
+		return x.Blog
+	}
+	return nil
+}
+
+type DeleteBlogRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *DeleteBlogRequest) Reset() {
+	*x = DeleteBlogRequest{}
+	mi := &file_blog_v1_blog_proto_msgTypes[10]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DeleteBlogRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeleteBlogRequest) ProtoMessage() {}
+
+func (x *DeleteBlogRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_blog_v1_blog_proto_msgTypes[10]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeleteBlogRequest.ProtoReflect.Descriptor instead.
+func (*DeleteBlogRequest) Descriptor() ([]byte, []int) {
+	return file_blog_v1_blog_proto_rawDescGZIP(), []int{10}
+}
+
+func (x *DeleteBlogRequest) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+type DeleteBlogResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Message       string                 `protobuf:"bytes,1,opt,name=message,proto3" json:"message,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *DeleteBlogResponse) Reset() {
+	*x = DeleteBlogResponse{}
+	mi := &file_blog_v1_blog_proto_msgTypes[11]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DeleteBlogResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeleteBlogResponse) ProtoMessage() {}
+
+func (x *DeleteBlogResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_blog_v1_blog_proto_msgTypes[11]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeleteBlogResponse.ProtoReflect.Descriptor instead.
+func (*DeleteBlogResponse) Descriptor() ([]byte, []int) {
+	return file_blog_v1_blog_proto_rawDescGZIP(), []int{11}
+}
+
+func (x *DeleteBlogResponse) GetMessage() string {
+	if x != nil {
+		return x.Message
+	}
+	return ""
+}
+
 type LikeBlogRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	BlogId        string                 `protobuf:"bytes,1,opt,name=blog_id,json=blogId,proto3" json:"blog_id,omitempty"`
@@ -552,7 +752,7 @@ type LikeBlogRequest struct {
 
 func (x *LikeBlogRequest) Reset() {
 	*x = LikeBlogRequest{}
-	mi := &file_blog_v1_blog_proto_msgTypes[8]
+	mi := &file_blog_v1_blog_proto_msgTypes[12]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -564,7 +764,7 @@ func (x *LikeBlogRequest) String() string {
 func (*LikeBlogRequest) ProtoMessage() {}
 
 func (x *LikeBlogRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_blog_v1_blog_proto_msgTypes[8]
+	mi := &file_blog_v1_blog_proto_msgTypes[12]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -577,7 +777,7 @@ func (x *LikeBlogRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LikeBlogRequest.ProtoReflect.Descriptor instead.
 func (*LikeBlogRequest) Descriptor() ([]byte, []int) {
-	return file_blog_v1_blog_proto_rawDescGZIP(), []int{8}
+	return file_blog_v1_blog_proto_rawDescGZIP(), []int{12}
 }
 
 func (x *LikeBlogRequest) GetBlogId() string {
@@ -596,7 +796,7 @@ type LikeBlogResponse struct {
 
 func (x *LikeBlogResponse) Reset() {
 	*x = LikeBlogResponse{}
-	mi := &file_blog_v1_blog_proto_msgTypes[9]
+	mi := &file_blog_v1_blog_proto_msgTypes[13]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -608,7 +808,7 @@ func (x *LikeBlogResponse) String() string {
 func (*LikeBlogResponse) ProtoMessage() {}
 
 func (x *LikeBlogResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_blog_v1_blog_proto_msgTypes[9]
+	mi := &file_blog_v1_blog_proto_msgTypes[13]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -621,7 +821,7 @@ func (x *LikeBlogResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LikeBlogResponse.ProtoReflect.Descriptor instead.
 func (*LikeBlogResponse) Descriptor() ([]byte, []int) {
-	return file_blog_v1_blog_proto_rawDescGZIP(), []int{9}
+	return file_blog_v1_blog_proto_rawDescGZIP(), []int{13}
 }
 
 func (x *LikeBlogResponse) GetMessage() string {
@@ -640,7 +840,7 @@ type AddViewRequest struct {
 
 func (x *AddViewRequest) Reset() {
 	*x = AddViewRequest{}
-	mi := &file_blog_v1_blog_proto_msgTypes[10]
+	mi := &file_blog_v1_blog_proto_msgTypes[14]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -652,7 +852,7 @@ func (x *AddViewRequest) String() string {
 func (*AddViewRequest) ProtoMessage() {}
 
 func (x *AddViewRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_blog_v1_blog_proto_msgTypes[10]
+	mi := &file_blog_v1_blog_proto_msgTypes[14]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -665,7 +865,7 @@ func (x *AddViewRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AddViewRequest.ProtoReflect.Descriptor instead.
 func (*AddViewRequest) Descriptor() ([]byte, []int) {
-	return file_blog_v1_blog_proto_rawDescGZIP(), []int{10}
+	return file_blog_v1_blog_proto_rawDescGZIP(), []int{14}
 }
 
 func (x *AddViewRequest) GetBlogId() string {
@@ -684,7 +884,7 @@ type AddViewResponse struct {
 
 func (x *AddViewResponse) Reset() {
 	*x = AddViewResponse{}
-	mi := &file_blog_v1_blog_proto_msgTypes[11]
+	mi := &file_blog_v1_blog_proto_msgTypes[15]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -696,7 +896,7 @@ func (x *AddViewResponse) String() string {
 func (*AddViewResponse) ProtoMessage() {}
 
 func (x *AddViewResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_blog_v1_blog_proto_msgTypes[11]
+	mi := &file_blog_v1_blog_proto_msgTypes[15]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -709,7 +909,7 @@ func (x *AddViewResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AddViewResponse.ProtoReflect.Descriptor instead.
 func (*AddViewResponse) Descriptor() ([]byte, []int) {
-	return file_blog_v1_blog_proto_rawDescGZIP(), []int{11}
+	return file_blog_v1_blog_proto_rawDescGZIP(), []int{15}
 }
 
 func (x *AddViewResponse) GetMessage() string {
@@ -729,7 +929,7 @@ type AddCommentRequest struct {
 
 func (x *AddCommentRequest) Reset() {
 	*x = AddCommentRequest{}
-	mi := &file_blog_v1_blog_proto_msgTypes[12]
+	mi := &file_blog_v1_blog_proto_msgTypes[16]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -741,7 +941,7 @@ func (x *AddCommentRequest) String() string {
 func (*AddCommentRequest) ProtoMessage() {}
 
 func (x *AddCommentRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_blog_v1_blog_proto_msgTypes[12]
+	mi := &file_blog_v1_blog_proto_msgTypes[16]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -754,7 +954,7 @@ func (x *AddCommentRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AddCommentRequest.ProtoReflect.Descriptor instead.
 func (*AddCommentRequest) Descriptor() ([]byte, []int) {
-	return file_blog_v1_blog_proto_rawDescGZIP(), []int{12}
+	return file_blog_v1_blog_proto_rawDescGZIP(), []int{16}
 }
 
 func (x *AddCommentRequest) GetBlogId() string {
@@ -780,7 +980,7 @@ type AddCommentResponse struct {
 
 func (x *AddCommentResponse) Reset() {
 	*x = AddCommentResponse{}
-	mi := &file_blog_v1_blog_proto_msgTypes[13]
+	mi := &file_blog_v1_blog_proto_msgTypes[17]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -792,7 +992,7 @@ func (x *AddCommentResponse) String() string {
 func (*AddCommentResponse) ProtoMessage() {}
 
 func (x *AddCommentResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_blog_v1_blog_proto_msgTypes[13]
+	mi := &file_blog_v1_blog_proto_msgTypes[17]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -805,7 +1005,7 @@ func (x *AddCommentResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AddCommentResponse.ProtoReflect.Descriptor instead.
 func (*AddCommentResponse) Descriptor() ([]byte, []int) {
-	return file_blog_v1_blog_proto_rawDescGZIP(), []int{13}
+	return file_blog_v1_blog_proto_rawDescGZIP(), []int{17}
 }
 
 func (x *AddCommentResponse) GetComment() *Comment {
@@ -829,7 +1029,7 @@ type Comment struct {
 
 func (x *Comment) Reset() {
 	*x = Comment{}
-	mi := &file_blog_v1_blog_proto_msgTypes[14]
+	mi := &file_blog_v1_blog_proto_msgTypes[18]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -841,7 +1041,7 @@ func (x *Comment) String() string {
 func (*Comment) ProtoMessage() {}
 
 func (x *Comment) ProtoReflect() protoreflect.Message {
-	mi := &file_blog_v1_blog_proto_msgTypes[14]
+	mi := &file_blog_v1_blog_proto_msgTypes[18]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -854,7 +1054,7 @@ func (x *Comment) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Comment.ProtoReflect.Descriptor instead.
 func (*Comment) Descriptor() ([]byte, []int) {
-	return file_blog_v1_blog_proto_rawDescGZIP(), []int{14}
+	return file_blog_v1_blog_proto_rawDescGZIP(), []int{18}
 }
 
 func (x *Comment) GetContent() string {
@@ -910,7 +1110,7 @@ type AddSubCommentRequest struct {
 
 func (x *AddSubCommentRequest) Reset() {
 	*x = AddSubCommentRequest{}
-	mi := &file_blog_v1_blog_proto_msgTypes[15]
+	mi := &file_blog_v1_blog_proto_msgTypes[19]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -922,7 +1122,7 @@ func (x *AddSubCommentRequest) String() string {
 func (*AddSubCommentRequest) ProtoMessage() {}
 
 func (x *AddSubCommentRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_blog_v1_blog_proto_msgTypes[15]
+	mi := &file_blog_v1_blog_proto_msgTypes[19]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -935,7 +1135,7 @@ func (x *AddSubCommentRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AddSubCommentRequest.ProtoReflect.Descriptor instead.
 func (*AddSubCommentRequest) Descriptor() ([]byte, []int) {
-	return file_blog_v1_blog_proto_rawDescGZIP(), []int{15}
+	return file_blog_v1_blog_proto_rawDescGZIP(), []int{19}
 }
 
 func (x *AddSubCommentRequest) GetBlogId() string {
@@ -968,7 +1168,7 @@ type AddSubCommentResponse struct {
 
 func (x *AddSubCommentResponse) Reset() {
 	*x = AddSubCommentResponse{}
-	mi := &file_blog_v1_blog_proto_msgTypes[16]
+	mi := &file_blog_v1_blog_proto_msgTypes[20]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -980,7 +1180,7 @@ func (x *AddSubCommentResponse) String() string {
 func (*AddSubCommentResponse) ProtoMessage() {}
 
 func (x *AddSubCommentResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_blog_v1_blog_proto_msgTypes[16]
+	mi := &file_blog_v1_blog_proto_msgTypes[20]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -993,7 +1193,7 @@ func (x *AddSubCommentResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AddSubCommentResponse.ProtoReflect.Descriptor instead.
 func (*AddSubCommentResponse) Descriptor() ([]byte, []int) {
-	return file_blog_v1_blog_proto_rawDescGZIP(), []int{16}
+	return file_blog_v1_blog_proto_rawDescGZIP(), []int{20}
 }
 
 func (x *AddSubCommentResponse) GetComment() *Comment {
@@ -1015,7 +1215,7 @@ type GetCommentsRequest struct {
 
 func (x *GetCommentsRequest) Reset() {
 	*x = GetCommentsRequest{}
-	mi := &file_blog_v1_blog_proto_msgTypes[17]
+	mi := &file_blog_v1_blog_proto_msgTypes[21]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1027,7 +1227,7 @@ func (x *GetCommentsRequest) String() string {
 func (*GetCommentsRequest) ProtoMessage() {}
 
 func (x *GetCommentsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_blog_v1_blog_proto_msgTypes[17]
+	mi := &file_blog_v1_blog_proto_msgTypes[21]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1040,7 +1240,7 @@ func (x *GetCommentsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetCommentsRequest.ProtoReflect.Descriptor instead.
 func (*GetCommentsRequest) Descriptor() ([]byte, []int) {
-	return file_blog_v1_blog_proto_rawDescGZIP(), []int{17}
+	return file_blog_v1_blog_proto_rawDescGZIP(), []int{21}
 }
 
 func (x *GetCommentsRequest) GetBlogId() string {
@@ -1080,7 +1280,7 @@ type GetCommentsResponse struct {
 
 func (x *GetCommentsResponse) Reset() {
 	*x = GetCommentsResponse{}
-	mi := &file_blog_v1_blog_proto_msgTypes[18]
+	mi := &file_blog_v1_blog_proto_msgTypes[22]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1092,7 +1292,7 @@ func (x *GetCommentsResponse) String() string {
 func (*GetCommentsResponse) ProtoMessage() {}
 
 func (x *GetCommentsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_blog_v1_blog_proto_msgTypes[18]
+	mi := &file_blog_v1_blog_proto_msgTypes[22]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1105,7 +1305,7 @@ func (x *GetCommentsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetCommentsResponse.ProtoReflect.Descriptor instead.
 func (*GetCommentsResponse) Descriptor() ([]byte, []int) {
-	return file_blog_v1_blog_proto_rawDescGZIP(), []int{18}
+	return file_blog_v1_blog_proto_rawDescGZIP(), []int{22}
 }
 
 func (x *GetCommentsResponse) GetComments() []*Comment {
@@ -1125,7 +1325,7 @@ type GetTrendingBlogsRequest struct {
 
 func (x *GetTrendingBlogsRequest) Reset() {
 	*x = GetTrendingBlogsRequest{}
-	mi := &file_blog_v1_blog_proto_msgTypes[19]
+	mi := &file_blog_v1_blog_proto_msgTypes[23]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1137,7 +1337,7 @@ func (x *GetTrendingBlogsRequest) String() string {
 func (*GetTrendingBlogsRequest) ProtoMessage() {}
 
 func (x *GetTrendingBlogsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_blog_v1_blog_proto_msgTypes[19]
+	mi := &file_blog_v1_blog_proto_msgTypes[23]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1150,7 +1350,7 @@ func (x *GetTrendingBlogsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetTrendingBlogsRequest.ProtoReflect.Descriptor instead.
 func (*GetTrendingBlogsRequest) Descriptor() ([]byte, []int) {
-	return file_blog_v1_blog_proto_rawDescGZIP(), []int{19}
+	return file_blog_v1_blog_proto_rawDescGZIP(), []int{23}
 }
 
 func (x *GetTrendingBlogsRequest) GetLimit() int32 {
@@ -1176,7 +1376,7 @@ type GetTrendingBlogsResponse struct {
 
 func (x *GetTrendingBlogsResponse) Reset() {
 	*x = GetTrendingBlogsResponse{}
-	mi := &file_blog_v1_blog_proto_msgTypes[20]
+	mi := &file_blog_v1_blog_proto_msgTypes[24]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1188,7 +1388,7 @@ func (x *GetTrendingBlogsResponse) String() string {
 func (*GetTrendingBlogsResponse) ProtoMessage() {}
 
 func (x *GetTrendingBlogsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_blog_v1_blog_proto_msgTypes[20]
+	mi := &file_blog_v1_blog_proto_msgTypes[24]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1201,7 +1401,7 @@ func (x *GetTrendingBlogsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetTrendingBlogsResponse.ProtoReflect.Descriptor instead.
 func (*GetTrendingBlogsResponse) Descriptor() ([]byte, []int) {
-	return file_blog_v1_blog_proto_rawDescGZIP(), []int{20}
+	return file_blog_v1_blog_proto_rawDescGZIP(), []int{24}
 }
 
 func (x *GetTrendingBlogsResponse) GetBlogs() []*Blog {
@@ -1223,7 +1423,7 @@ type Tag struct {
 
 func (x *Tag) Reset() {
 	*x = Tag{}
-	mi := &file_blog_v1_blog_proto_msgTypes[21]
+	mi := &file_blog_v1_blog_proto_msgTypes[25]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1235,7 +1435,7 @@ func (x *Tag) String() string {
 func (*Tag) ProtoMessage() {}
 
 func (x *Tag) ProtoReflect() protoreflect.Message {
-	mi := &file_blog_v1_blog_proto_msgTypes[21]
+	mi := &file_blog_v1_blog_proto_msgTypes[25]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1248,7 +1448,7 @@ func (x *Tag) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Tag.ProtoReflect.Descriptor instead.
 func (*Tag) Descriptor() ([]byte, []int) {
-	return file_blog_v1_blog_proto_rawDescGZIP(), []int{21}
+	return file_blog_v1_blog_proto_rawDescGZIP(), []int{25}
 }
 
 func (x *Tag) GetId() string {
@@ -1348,7 +1548,23 @@ var file_blog_v1_blog_proto_rawDesc = string([]byte{
 	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x31, 0x0a, 0x05, 0x62, 0x6c, 0x6f, 0x67, 0x73,
 	0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x1b, 0x2e, 0x62, 0x6c, 0x6f, 0x67, 0x2e, 0x76, 0x31,
 	0x2e, 0x42, 0x6c, 0x6f, 0x67, 0x57, 0x69, 0x74, 0x68, 0x6f, 0x75, 0x74, 0x43, 0x6f, 0x6e, 0x74,
-	0x65, 0x6e, 0x74, 0x52, 0x05, 0x62, 0x6c, 0x6f, 0x67, 0x73, 0x22, 0x2a, 0x0a, 0x0f, 0x4c, 0x69,
+	0x65, 0x6e, 0x74, 0x52, 0x05, 0x62, 0x6c, 0x6f, 0x67, 0x73, 0x22, 0x70, 0x0a, 0x11, 0x55, 0x70,
+	0x64, 0x61, 0x74, 0x65, 0x42, 0x6c, 0x6f, 0x67, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12,
+	0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x02, 0x69, 0x64, 0x12,
+	0x14, 0x0a, 0x05, 0x74, 0x69, 0x74, 0x6c, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05,
+	0x74, 0x69, 0x74, 0x6c, 0x65, 0x12, 0x18, 0x0a, 0x07, 0x63, 0x6f, 0x6e, 0x74, 0x65, 0x6e, 0x74,
+	0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x63, 0x6f, 0x6e, 0x74, 0x65, 0x6e, 0x74, 0x12,
+	0x1b, 0x0a, 0x09, 0x69, 0x73, 0x5f, 0x70, 0x75, 0x62, 0x6c, 0x69, 0x63, 0x18, 0x04, 0x20, 0x01,
+	0x28, 0x08, 0x52, 0x08, 0x69, 0x73, 0x50, 0x75, 0x62, 0x6c, 0x69, 0x63, 0x22, 0x37, 0x0a, 0x12,
+	0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x42, 0x6c, 0x6f, 0x67, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
+	0x73, 0x65, 0x12, 0x21, 0x0a, 0x04, 0x62, 0x6c, 0x6f, 0x67, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b,
+	0x32, 0x0d, 0x2e, 0x62, 0x6c, 0x6f, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x42, 0x6c, 0x6f, 0x67, 0x52,
+	0x04, 0x62, 0x6c, 0x6f, 0x67, 0x22, 0x23, 0x0a, 0x11, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x42,
+	0x6c, 0x6f, 0x67, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64,
+	0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x02, 0x69, 0x64, 0x22, 0x2e, 0x0a, 0x12, 0x44, 0x65,
+	0x6c, 0x65, 0x74, 0x65, 0x42, 0x6c, 0x6f, 0x67, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
+	0x12, 0x18, 0x0a, 0x07, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28,
+	0x09, 0x52, 0x07, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x22, 0x2a, 0x0a, 0x0f, 0x4c, 0x69,
 	0x6b, 0x65, 0x42, 0x6c, 0x6f, 0x67, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x17, 0x0a,
 	0x07, 0x62, 0x6c, 0x6f, 0x67, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06,
 	0x62, 0x6c, 0x6f, 0x67, 0x49, 0x64, 0x22, 0x2c, 0x0a, 0x10, 0x4c, 0x69, 0x6b, 0x65, 0x42, 0x6c,
@@ -1421,7 +1637,7 @@ var file_blog_v1_blog_proto_rawDesc = string([]byte{
 	0x72, 0x65, 0x61, 0x74, 0x65, 0x64, 0x5f, 0x61, 0x74, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52,
 	0x09, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x64, 0x41, 0x74, 0x12, 0x1d, 0x0a, 0x0a, 0x75, 0x70,
 	0x64, 0x61, 0x74, 0x65, 0x64, 0x5f, 0x61, 0x74, 0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x52, 0x09,
-	0x75, 0x70, 0x64, 0x61, 0x74, 0x65, 0x64, 0x41, 0x74, 0x32, 0xc5, 0x05, 0x0a, 0x0b, 0x42, 0x6c,
+	0x75, 0x70, 0x64, 0x61, 0x74, 0x65, 0x64, 0x41, 0x74, 0x32, 0xdf, 0x06, 0x0a, 0x0b, 0x42, 0x6c,
 	0x6f, 0x67, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0x4b, 0x0a, 0x0a, 0x43, 0x72, 0x65,
 	0x61, 0x74, 0x65, 0x42, 0x6c, 0x6f, 0x67, 0x12, 0x1a, 0x2e, 0x62, 0x6c, 0x6f, 0x67, 0x2e, 0x76,
 	0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x42, 0x6c, 0x6f, 0x67, 0x52, 0x65, 0x71, 0x75,
@@ -1436,47 +1652,56 @@ var file_blog_v1_blog_proto_rawDesc = string([]byte{
 	0x31, 0x2e, 0x4c, 0x69, 0x73, 0x74, 0x42, 0x6c, 0x6f, 0x67, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65,
 	0x73, 0x74, 0x1a, 0x1a, 0x2e, 0x62, 0x6c, 0x6f, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x4c, 0x69, 0x73,
 	0x74, 0x42, 0x6c, 0x6f, 0x67, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x04,
-	0x80, 0xb5, 0x18, 0x01, 0x12, 0x45, 0x0a, 0x08, 0x4c, 0x69, 0x6b, 0x65, 0x42, 0x6c, 0x6f, 0x67,
-	0x12, 0x18, 0x2e, 0x62, 0x6c, 0x6f, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x4c, 0x69, 0x6b, 0x65, 0x42,
-	0x6c, 0x6f, 0x67, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x19, 0x2e, 0x62, 0x6c, 0x6f,
-	0x67, 0x2e, 0x76, 0x31, 0x2e, 0x4c, 0x69, 0x6b, 0x65, 0x42, 0x6c, 0x6f, 0x67, 0x52, 0x65, 0x73,
-	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x04, 0x80, 0xb5, 0x18, 0x01, 0x12, 0x42, 0x0a, 0x07, 0x41,
-	0x64, 0x64, 0x56, 0x69, 0x65, 0x77, 0x12, 0x17, 0x2e, 0x62, 0x6c, 0x6f, 0x67, 0x2e, 0x76, 0x31,
-	0x2e, 0x41, 0x64, 0x64, 0x56, 0x69, 0x65, 0x77, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
-	0x18, 0x2e, 0x62, 0x6c, 0x6f, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x41, 0x64, 0x64, 0x56, 0x69, 0x65,
-	0x77, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x04, 0x80, 0xb5, 0x18, 0x01, 0x12,
-	0x4e, 0x0a, 0x0b, 0x47, 0x65, 0x74, 0x43, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x73, 0x12, 0x1b,
-	0x2e, 0x62, 0x6c, 0x6f, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x43, 0x6f, 0x6d, 0x6d,
-	0x65, 0x6e, 0x74, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1c, 0x2e, 0x62, 0x6c,
-	0x6f, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x43, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74,
-	0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x04, 0x80, 0xb5, 0x18, 0x01, 0x12,
-	0x4b, 0x0a, 0x0a, 0x41, 0x64, 0x64, 0x43, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x12, 0x1a, 0x2e,
-	0x62, 0x6c, 0x6f, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x41, 0x64, 0x64, 0x43, 0x6f, 0x6d, 0x6d, 0x65,
-	0x6e, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1b, 0x2e, 0x62, 0x6c, 0x6f, 0x67,
-	0x2e, 0x76, 0x31, 0x2e, 0x41, 0x64, 0x64, 0x43, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x52, 0x65,
-	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x04, 0x80, 0xb5, 0x18, 0x01, 0x12, 0x54, 0x0a, 0x0d,
-	0x41, 0x64, 0x64, 0x53, 0x75, 0x62, 0x43, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x12, 0x1d, 0x2e,
-	0x62, 0x6c, 0x6f, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x41, 0x64, 0x64, 0x53, 0x75, 0x62, 0x43, 0x6f,
-	0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1e, 0x2e, 0x62,
-	0x6c, 0x6f, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x41, 0x64, 0x64, 0x53, 0x75, 0x62, 0x43, 0x6f, 0x6d,
-	0x6d, 0x65, 0x6e, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x04, 0x80, 0xb5,
-	0x18, 0x01, 0x12, 0x5d, 0x0a, 0x10, 0x47, 0x65, 0x74, 0x54, 0x72, 0x65, 0x6e, 0x64, 0x69, 0x6e,
-	0x67, 0x42, 0x6c, 0x6f, 0x67, 0x73, 0x12, 0x20, 0x2e, 0x62, 0x6c, 0x6f, 0x67, 0x2e, 0x76, 0x31,
-	0x2e, 0x47, 0x65, 0x74, 0x54, 0x72, 0x65, 0x6e, 0x64, 0x69, 0x6e, 0x67, 0x42, 0x6c, 0x6f, 0x67,
-	0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x21, 0x2e, 0x62, 0x6c, 0x6f, 0x67, 0x2e,
-	0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x54, 0x72, 0x65, 0x6e, 0x64, 0x69, 0x6e, 0x67, 0x42, 0x6c,
-	0x6f, 0x67, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x04, 0x80, 0xb5, 0x18,
-	0x01, 0x42, 0x97, 0x01, 0x0a, 0x0b, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x6c, 0x6f, 0x67, 0x2e, 0x76,
-	0x31, 0x42, 0x09, 0x42, 0x6c, 0x6f, 0x67, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x40,
-	0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x41, 0x6b, 0x61, 0x73, 0x68,
-	0x2d, 0x4d, 0x61, 0x6e, 0x69, 0x6b, 0x61, 0x6e, 0x64, 0x61, 0x6e, 0x2f, 0x62, 0x6c, 0x6f, 0x67,
-	0x67, 0x65, 0x72, 0x2d, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2f, 0x70, 0x72, 0x6f, 0x74,
-	0x6f, 0x2f, 0x62, 0x6c, 0x6f, 0x67, 0x2f, 0x76, 0x31, 0x3b, 0x62, 0x6c, 0x6f, 0x67, 0x76, 0x31,
-	0xa2, 0x02, 0x03, 0x42, 0x58, 0x58, 0xaa, 0x02, 0x07, 0x42, 0x6c, 0x6f, 0x67, 0x2e, 0x56, 0x31,
-	0xca, 0x02, 0x07, 0x42, 0x6c, 0x6f, 0x67, 0x5c, 0x56, 0x31, 0xe2, 0x02, 0x13, 0x42, 0x6c, 0x6f,
-	0x67, 0x5c, 0x56, 0x31, 0x5c, 0x47, 0x50, 0x42, 0x4d, 0x65, 0x74, 0x61, 0x64, 0x61, 0x74, 0x61,
-	0xea, 0x02, 0x08, 0x42, 0x6c, 0x6f, 0x67, 0x3a, 0x3a, 0x56, 0x31, 0x62, 0x06, 0x70, 0x72, 0x6f,
-	0x74, 0x6f, 0x33,
+	0x80, 0xb5, 0x18, 0x01, 0x12, 0x4b, 0x0a, 0x0a, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x42, 0x6c,
+	0x6f, 0x67, 0x12, 0x1a, 0x2e, 0x62, 0x6c, 0x6f, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x70, 0x64,
+	0x61, 0x74, 0x65, 0x42, 0x6c, 0x6f, 0x67, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1b,
+	0x2e, 0x62, 0x6c, 0x6f, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x42,
+	0x6c, 0x6f, 0x67, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x04, 0x80, 0xb5, 0x18,
+	0x01, 0x12, 0x4b, 0x0a, 0x0a, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x42, 0x6c, 0x6f, 0x67, 0x12,
+	0x1a, 0x2e, 0x62, 0x6c, 0x6f, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65,
+	0x42, 0x6c, 0x6f, 0x67, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1b, 0x2e, 0x62, 0x6c,
+	0x6f, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x42, 0x6c, 0x6f, 0x67,
+	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x04, 0x80, 0xb5, 0x18, 0x01, 0x12, 0x45,
+	0x0a, 0x08, 0x4c, 0x69, 0x6b, 0x65, 0x42, 0x6c, 0x6f, 0x67, 0x12, 0x18, 0x2e, 0x62, 0x6c, 0x6f,
+	0x67, 0x2e, 0x76, 0x31, 0x2e, 0x4c, 0x69, 0x6b, 0x65, 0x42, 0x6c, 0x6f, 0x67, 0x52, 0x65, 0x71,
+	0x75, 0x65, 0x73, 0x74, 0x1a, 0x19, 0x2e, 0x62, 0x6c, 0x6f, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x4c,
+	0x69, 0x6b, 0x65, 0x42, 0x6c, 0x6f, 0x67, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22,
+	0x04, 0x80, 0xb5, 0x18, 0x01, 0x12, 0x42, 0x0a, 0x07, 0x41, 0x64, 0x64, 0x56, 0x69, 0x65, 0x77,
+	0x12, 0x17, 0x2e, 0x62, 0x6c, 0x6f, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x41, 0x64, 0x64, 0x56, 0x69,
+	0x65, 0x77, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x18, 0x2e, 0x62, 0x6c, 0x6f, 0x67,
+	0x2e, 0x76, 0x31, 0x2e, 0x41, 0x64, 0x64, 0x56, 0x69, 0x65, 0x77, 0x52, 0x65, 0x73, 0x70, 0x6f,
+	0x6e, 0x73, 0x65, 0x22, 0x04, 0x80, 0xb5, 0x18, 0x01, 0x12, 0x4e, 0x0a, 0x0b, 0x47, 0x65, 0x74,
+	0x43, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x73, 0x12, 0x1b, 0x2e, 0x62, 0x6c, 0x6f, 0x67, 0x2e,
+	0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x43, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x73, 0x52, 0x65,
+	0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1c, 0x2e, 0x62, 0x6c, 0x6f, 0x67, 0x2e, 0x76, 0x31, 0x2e,
+	0x47, 0x65, 0x74, 0x43, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f,
+	0x6e, 0x73, 0x65, 0x22, 0x04, 0x80, 0xb5, 0x18, 0x01, 0x12, 0x4b, 0x0a, 0x0a, 0x41, 0x64, 0x64,
+	0x43, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x12, 0x1a, 0x2e, 0x62, 0x6c, 0x6f, 0x67, 0x2e, 0x76,
+	0x31, 0x2e, 0x41, 0x64, 0x64, 0x43, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x52, 0x65, 0x71, 0x75,
+	0x65, 0x73, 0x74, 0x1a, 0x1b, 0x2e, 0x62, 0x6c, 0x6f, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x41, 0x64,
+	0x64, 0x43, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
+	0x22, 0x04, 0x80, 0xb5, 0x18, 0x01, 0x12, 0x54, 0x0a, 0x0d, 0x41, 0x64, 0x64, 0x53, 0x75, 0x62,
+	0x43, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x12, 0x1d, 0x2e, 0x62, 0x6c, 0x6f, 0x67, 0x2e, 0x76,
+	0x31, 0x2e, 0x41, 0x64, 0x64, 0x53, 0x75, 0x62, 0x43, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x52,
+	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1e, 0x2e, 0x62, 0x6c, 0x6f, 0x67, 0x2e, 0x76, 0x31,
+	0x2e, 0x41, 0x64, 0x64, 0x53, 0x75, 0x62, 0x43, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x52, 0x65,
+	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x04, 0x80, 0xb5, 0x18, 0x01, 0x12, 0x5d, 0x0a, 0x10,
+	0x47, 0x65, 0x74, 0x54, 0x72, 0x65, 0x6e, 0x64, 0x69, 0x6e, 0x67, 0x42, 0x6c, 0x6f, 0x67, 0x73,
+	0x12, 0x20, 0x2e, 0x62, 0x6c, 0x6f, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x54, 0x72,
+	0x65, 0x6e, 0x64, 0x69, 0x6e, 0x67, 0x42, 0x6c, 0x6f, 0x67, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65,
+	0x73, 0x74, 0x1a, 0x21, 0x2e, 0x62, 0x6c, 0x6f, 0x67, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74,
+	0x54, 0x72, 0x65, 0x6e, 0x64, 0x69, 0x6e, 0x67, 0x42, 0x6c, 0x6f, 0x67, 0x73, 0x52, 0x65, 0x73,
+	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x04, 0x80, 0xb5, 0x18, 0x01, 0x42, 0x97, 0x01, 0x0a, 0x0b,
+	0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x6c, 0x6f, 0x67, 0x2e, 0x76, 0x31, 0x42, 0x09, 0x42, 0x6c, 0x6f,
+	0x67, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x40, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62,
+	0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x41, 0x6b, 0x61, 0x73, 0x68, 0x2d, 0x4d, 0x61, 0x6e, 0x69, 0x6b,
+	0x61, 0x6e, 0x64, 0x61, 0x6e, 0x2f, 0x62, 0x6c, 0x6f, 0x67, 0x67, 0x65, 0x72, 0x2d, 0x73, 0x65,
+	0x72, 0x76, 0x69, 0x63, 0x65, 0x2f, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x62, 0x6c, 0x6f, 0x67,
+	0x2f, 0x76, 0x31, 0x3b, 0x62, 0x6c, 0x6f, 0x67, 0x76, 0x31, 0xa2, 0x02, 0x03, 0x42, 0x58, 0x58,
+	0xaa, 0x02, 0x07, 0x42, 0x6c, 0x6f, 0x67, 0x2e, 0x56, 0x31, 0xca, 0x02, 0x07, 0x42, 0x6c, 0x6f,
+	0x67, 0x5c, 0x56, 0x31, 0xe2, 0x02, 0x13, 0x42, 0x6c, 0x6f, 0x67, 0x5c, 0x56, 0x31, 0x5c, 0x47,
+	0x50, 0x42, 0x4d, 0x65, 0x74, 0x61, 0x64, 0x61, 0x74, 0x61, 0xea, 0x02, 0x08, 0x42, 0x6c, 0x6f,
+	0x67, 0x3a, 0x3a, 0x56, 0x31, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 })
 
 var (
@@ -1491,7 +1716,7 @@ func file_blog_v1_blog_proto_rawDescGZIP() []byte {
 	return file_blog_v1_blog_proto_rawDescData
 }
 
-var file_blog_v1_blog_proto_msgTypes = make([]protoimpl.MessageInfo, 22)
+var file_blog_v1_blog_proto_msgTypes = make([]protoimpl.MessageInfo, 26)
 var file_blog_v1_blog_proto_goTypes = []any{
 	(*CreateBlogRequest)(nil),        // 0: blog.v1.CreateBlogRequest
 	(*CreateBlogResponse)(nil),       // 1: blog.v1.CreateBlogResponse
@@ -1501,58 +1726,67 @@ var file_blog_v1_blog_proto_goTypes = []any{
 	(*GetBlogResponse)(nil),          // 5: blog.v1.GetBlogResponse
 	(*ListBlogsRequest)(nil),         // 6: blog.v1.ListBlogsRequest
 	(*ListBlogsResponse)(nil),        // 7: blog.v1.ListBlogsResponse
-	(*LikeBlogRequest)(nil),          // 8: blog.v1.LikeBlogRequest
-	(*LikeBlogResponse)(nil),         // 9: blog.v1.LikeBlogResponse
-	(*AddViewRequest)(nil),           // 10: blog.v1.AddViewRequest
-	(*AddViewResponse)(nil),          // 11: blog.v1.AddViewResponse
-	(*AddCommentRequest)(nil),        // 12: blog.v1.AddCommentRequest
-	(*AddCommentResponse)(nil),       // 13: blog.v1.AddCommentResponse
-	(*Comment)(nil),                  // 14: blog.v1.Comment
-	(*AddSubCommentRequest)(nil),     // 15: blog.v1.AddSubCommentRequest
-	(*AddSubCommentResponse)(nil),    // 16: blog.v1.AddSubCommentResponse
-	(*GetCommentsRequest)(nil),       // 17: blog.v1.GetCommentsRequest
-	(*GetCommentsResponse)(nil),      // 18: blog.v1.GetCommentsResponse
-	(*GetTrendingBlogsRequest)(nil),  // 19: blog.v1.GetTrendingBlogsRequest
-	(*GetTrendingBlogsResponse)(nil), // 20: blog.v1.GetTrendingBlogsResponse
-	(*Tag)(nil),                      // 21: blog.v1.Tag
-	(*v1.User)(nil),                  // 22: user.v1.User
+	(*UpdateBlogRequest)(nil),        // 8: blog.v1.UpdateBlogRequest
+	(*UpdateBlogResponse)(nil),       // 9: blog.v1.UpdateBlogResponse
+	(*DeleteBlogRequest)(nil),        // 10: blog.v1.DeleteBlogRequest
+	(*DeleteBlogResponse)(nil),       // 11: blog.v1.DeleteBlogResponse
+	(*LikeBlogRequest)(nil),          // 12: blog.v1.LikeBlogRequest
+	(*LikeBlogResponse)(nil),         // 13: blog.v1.LikeBlogResponse
+	(*AddViewRequest)(nil),           // 14: blog.v1.AddViewRequest
+	(*AddViewResponse)(nil),          // 15: blog.v1.AddViewResponse
+	(*AddCommentRequest)(nil),        // 16: blog.v1.AddCommentRequest
+	(*AddCommentResponse)(nil),       // 17: blog.v1.AddCommentResponse
+	(*Comment)(nil),                  // 18: blog.v1.Comment
+	(*AddSubCommentRequest)(nil),     // 19: blog.v1.AddSubCommentRequest
+	(*AddSubCommentResponse)(nil),    // 20: blog.v1.AddSubCommentResponse
+	(*GetCommentsRequest)(nil),       // 21: blog.v1.GetCommentsRequest
+	(*GetCommentsResponse)(nil),      // 22: blog.v1.GetCommentsResponse
+	(*GetTrendingBlogsRequest)(nil),  // 23: blog.v1.GetTrendingBlogsRequest
+	(*GetTrendingBlogsResponse)(nil), // 24: blog.v1.GetTrendingBlogsResponse
+	(*Tag)(nil),                      // 25: blog.v1.Tag
+	(*v1.User)(nil),                  // 26: user.v1.User
 }
 var file_blog_v1_blog_proto_depIdxs = []int32{
 	2,  // 0: blog.v1.CreateBlogResponse.blog:type_name -> blog.v1.Blog
-	22, // 1: blog.v1.Blog.author:type_name -> user.v1.User
-	21, // 2: blog.v1.Blog.tags:type_name -> blog.v1.Tag
-	22, // 3: blog.v1.BlogWithoutContent.author:type_name -> user.v1.User
-	21, // 4: blog.v1.BlogWithoutContent.tags:type_name -> blog.v1.Tag
+	26, // 1: blog.v1.Blog.author:type_name -> user.v1.User
+	25, // 2: blog.v1.Blog.tags:type_name -> blog.v1.Tag
+	26, // 3: blog.v1.BlogWithoutContent.author:type_name -> user.v1.User
+	25, // 4: blog.v1.BlogWithoutContent.tags:type_name -> blog.v1.Tag
 	2,  // 5: blog.v1.GetBlogResponse.blog:type_name -> blog.v1.Blog
 	3,  // 6: blog.v1.ListBlogsResponse.blogs:type_name -> blog.v1.BlogWithoutContent
-	14, // 7: blog.v1.AddCommentResponse.comment:type_name -> blog.v1.Comment
-	14, // 8: blog.v1.Comment.sub_comments:type_name -> blog.v1.Comment
-	14, // 9: blog.v1.AddSubCommentResponse.comment:type_name -> blog.v1.Comment
-	14, // 10: blog.v1.GetCommentsResponse.comments:type_name -> blog.v1.Comment
-	2,  // 11: blog.v1.GetTrendingBlogsResponse.blogs:type_name -> blog.v1.Blog
-	0,  // 12: blog.v1.BlogService.CreateBlog:input_type -> blog.v1.CreateBlogRequest
-	4,  // 13: blog.v1.BlogService.GetBlog:input_type -> blog.v1.GetBlogRequest
-	6,  // 14: blog.v1.BlogService.ListBlogs:input_type -> blog.v1.ListBlogsRequest
-	8,  // 15: blog.v1.BlogService.LikeBlog:input_type -> blog.v1.LikeBlogRequest
-	10, // 16: blog.v1.BlogService.AddView:input_type -> blog.v1.AddViewRequest
-	17, // 17: blog.v1.BlogService.GetComments:input_type -> blog.v1.GetCommentsRequest
-	12, // 18: blog.v1.BlogService.AddComment:input_type -> blog.v1.AddCommentRequest
-	15, // 19: blog.v1.BlogService.AddSubComment:input_type -> blog.v1.AddSubCommentRequest
-	19, // 20: blog.v1.BlogService.GetTrendingBlogs:input_type -> blog.v1.GetTrendingBlogsRequest
-	1,  // 21: blog.v1.BlogService.CreateBlog:output_type -> blog.v1.CreateBlogResponse
-	5,  // 22: blog.v1.BlogService.GetBlog:output_type -> blog.v1.GetBlogResponse
-	7,  // 23: blog.v1.BlogService.ListBlogs:output_type -> blog.v1.ListBlogsResponse
-	9,  // 24: blog.v1.BlogService.LikeBlog:output_type -> blog.v1.LikeBlogResponse
-	11, // 25: blog.v1.BlogService.AddView:output_type -> blog.v1.AddViewResponse
-	18, // 26: blog.v1.BlogService.GetComments:output_type -> blog.v1.GetCommentsResponse
-	13, // 27: blog.v1.BlogService.AddComment:output_type -> blog.v1.AddCommentResponse
-	16, // 28: blog.v1.BlogService.AddSubComment:output_type -> blog.v1.AddSubCommentResponse
-	20, // 29: blog.v1.BlogService.GetTrendingBlogs:output_type -> blog.v1.GetTrendingBlogsResponse
-	21, // [21:30] is the sub-list for method output_type
-	12, // [12:21] is the sub-list for method input_type
-	12, // [12:12] is the sub-list for extension type_name
-	12, // [12:12] is the sub-list for extension extendee
-	0,  // [0:12] is the sub-list for field type_name
+	2,  // 7: blog.v1.UpdateBlogResponse.blog:type_name -> blog.v1.Blog
+	18, // 8: blog.v1.AddCommentResponse.comment:type_name -> blog.v1.Comment
+	18, // 9: blog.v1.Comment.sub_comments:type_name -> blog.v1.Comment
+	18, // 10: blog.v1.AddSubCommentResponse.comment:type_name -> blog.v1.Comment
+	18, // 11: blog.v1.GetCommentsResponse.comments:type_name -> blog.v1.Comment
+	2,  // 12: blog.v1.GetTrendingBlogsResponse.blogs:type_name -> blog.v1.Blog
+	0,  // 13: blog.v1.BlogService.CreateBlog:input_type -> blog.v1.CreateBlogRequest
+	4,  // 14: blog.v1.BlogService.GetBlog:input_type -> blog.v1.GetBlogRequest
+	6,  // 15: blog.v1.BlogService.ListBlogs:input_type -> blog.v1.ListBlogsRequest
+	8,  // 16: blog.v1.BlogService.UpdateBlog:input_type -> blog.v1.UpdateBlogRequest
+	10, // 17: blog.v1.BlogService.DeleteBlog:input_type -> blog.v1.DeleteBlogRequest
+	12, // 18: blog.v1.BlogService.LikeBlog:input_type -> blog.v1.LikeBlogRequest
+	14, // 19: blog.v1.BlogService.AddView:input_type -> blog.v1.AddViewRequest
+	21, // 20: blog.v1.BlogService.GetComments:input_type -> blog.v1.GetCommentsRequest
+	16, // 21: blog.v1.BlogService.AddComment:input_type -> blog.v1.AddCommentRequest
+	19, // 22: blog.v1.BlogService.AddSubComment:input_type -> blog.v1.AddSubCommentRequest
+	23, // 23: blog.v1.BlogService.GetTrendingBlogs:input_type -> blog.v1.GetTrendingBlogsRequest
+	1,  // 24: blog.v1.BlogService.CreateBlog:output_type -> blog.v1.CreateBlogResponse
+	5,  // 25: blog.v1.BlogService.GetBlog:output_type -> blog.v1.GetBlogResponse
+	7,  // 26: blog.v1.BlogService.ListBlogs:output_type -> blog.v1.ListBlogsResponse
+	9,  // 27: blog.v1.BlogService.UpdateBlog:output_type -> blog.v1.UpdateBlogResponse
+	11, // 28: blog.v1.BlogService.DeleteBlog:output_type -> blog.v1.DeleteBlogResponse
+	13, // 29: blog.v1.BlogService.LikeBlog:output_type -> blog.v1.LikeBlogResponse
+	15, // 30: blog.v1.BlogService.AddView:output_type -> blog.v1.AddViewResponse
+	22, // 31: blog.v1.BlogService.GetComments:output_type -> blog.v1.GetCommentsResponse
+	17, // 32: blog.v1.BlogService.AddComment:output_type -> blog.v1.AddCommentResponse
+	20, // 33: blog.v1.BlogService.AddSubComment:output_type -> blog.v1.AddSubCommentResponse
+	24, // 34: blog.v1.BlogService.GetTrendingBlogs:output_type -> blog.v1.GetTrendingBlogsResponse
+	24, // [24:35] is the sub-list for method output_type
+	13, // [13:24] is the sub-list for method input_type
+	13, // [13:13] is the sub-list for extension type_name
+	13, // [13:13] is the sub-list for extension extendee
+	0,  // [0:13] is the sub-list for field type_name
 }
 
 func init() { file_blog_v1_blog_proto_init() }
@@ -1561,14 +1795,14 @@ func file_blog_v1_blog_proto_init() {
 		return
 	}
 	file_blog_v1_blog_proto_msgTypes[6].OneofWrappers = []any{}
-	file_blog_v1_blog_proto_msgTypes[17].OneofWrappers = []any{}
+	file_blog_v1_blog_proto_msgTypes[21].OneofWrappers = []any{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_blog_v1_blog_proto_rawDesc), len(file_blog_v1_blog_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   22,
+			NumMessages:   26,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
