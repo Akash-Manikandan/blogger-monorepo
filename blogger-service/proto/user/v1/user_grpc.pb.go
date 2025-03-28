@@ -27,7 +27,16 @@ const (
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type UserServiceClient interface {
+	// CreateUser creates a new user account with the provided username, email and password.
+	// The username must be 3-20 characters long and can only contain letters, numbers and underscores.
+	// The email must be a valid email address.
+	// The password must be 6-50 characters long.
+	// Returns the created user details along with an authentication token.
 	CreateUser(ctx context.Context, in *CreateUserRequest, opts ...grpc.CallOption) (*CreateUserResponse, error)
+	// Login authenticates a user with their email and password.
+	// The email must be a valid email address.
+	// The password must be 6-50 characters long.
+	// Returns user details and an authentication token on successful login.
 	Login(ctx context.Context, in *LoginRequest, opts ...grpc.CallOption) (*LoginResponse, error)
 }
 
@@ -63,7 +72,16 @@ func (c *userServiceClient) Login(ctx context.Context, in *LoginRequest, opts ..
 // All implementations must embed UnimplementedUserServiceServer
 // for forward compatibility.
 type UserServiceServer interface {
+	// CreateUser creates a new user account with the provided username, email and password.
+	// The username must be 3-20 characters long and can only contain letters, numbers and underscores.
+	// The email must be a valid email address.
+	// The password must be 6-50 characters long.
+	// Returns the created user details along with an authentication token.
 	CreateUser(context.Context, *CreateUserRequest) (*CreateUserResponse, error)
+	// Login authenticates a user with their email and password.
+	// The email must be a valid email address.
+	// The password must be 6-50 characters long.
+	// Returns user details and an authentication token on successful login.
 	Login(context.Context, *LoginRequest) (*LoginResponse, error)
 	mustEmbedUnimplementedUserServiceServer()
 }

@@ -25,7 +25,12 @@ const (
 // HealthServiceClient is the client API for HealthService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
+//
+// HealthService provides health check endpoints for the blog service
 type HealthServiceClient interface {
+	// Check performs a health check of the service and its dependencies
+	// Returns the overall service status and database connectivity status
+	// Used for monitoring and service discovery
 	Check(ctx context.Context, in *CheckRequest, opts ...grpc.CallOption) (*CheckResponse, error)
 }
 
@@ -50,7 +55,12 @@ func (c *healthServiceClient) Check(ctx context.Context, in *CheckRequest, opts 
 // HealthServiceServer is the server API for HealthService service.
 // All implementations must embed UnimplementedHealthServiceServer
 // for forward compatibility.
+//
+// HealthService provides health check endpoints for the blog service
 type HealthServiceServer interface {
+	// Check performs a health check of the service and its dependencies
+	// Returns the overall service status and database connectivity status
+	// Used for monitoring and service discovery
 	Check(context.Context, *CheckRequest) (*CheckResponse, error)
 	mustEmbedUnimplementedHealthServiceServer()
 }

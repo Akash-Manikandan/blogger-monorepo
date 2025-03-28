@@ -21,6 +21,7 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+// CheckRequest is empty as no parameters are needed for health check
 type CheckRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	unknownFields protoimpl.UnknownFields
@@ -57,10 +58,13 @@ func (*CheckRequest) Descriptor() ([]byte, []int) {
 	return file_health_v1_health_proto_rawDescGZIP(), []int{0}
 }
 
+// CheckResponse contains the health status information
 type CheckResponse struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Status        string                 `protobuf:"bytes,1,opt,name=status,proto3" json:"status,omitempty"`
-	DbStatus      string                 `protobuf:"bytes,2,opt,name=db_status,json=dbStatus,proto3" json:"db_status,omitempty"`
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// status represents the overall service status (e.g., "UP", "DOWN")
+	Status string `protobuf:"bytes,1,opt,name=status,proto3" json:"status,omitempty"`
+	// db_status indicates the database connection status (e.g., "Connected", "Disconnected")
+	DbStatus      string `protobuf:"bytes,2,opt,name=db_status,json=dbStatus,proto3" json:"db_status,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }

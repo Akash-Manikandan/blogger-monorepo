@@ -13,6 +13,8 @@ export const file_health_v1_health: GenFile = /*@__PURE__*/
   fileDesc("ChZoZWFsdGgvdjEvaGVhbHRoLnByb3RvEgloZWFsdGgudjEiDgoMQ2hlY2tSZXF1ZXN0IjIKDUNoZWNrUmVzcG9uc2USDgoGc3RhdHVzGAEgASgJEhEKCWRiX3N0YXR1cxgCIAEoCTJLCg1IZWFsdGhTZXJ2aWNlEjoKBUNoZWNrEhcuaGVhbHRoLnYxLkNoZWNrUmVxdWVzdBoYLmhlYWx0aC52MS5DaGVja1Jlc3BvbnNlQqcBCg1jb20uaGVhbHRoLnYxQgtIZWFsdGhQcm90b1ABWkRnaXRodWIuY29tL0FrYXNoLU1hbmlrYW5kYW4vYmxvZ2dlci1zZXJ2aWNlL3Byb3RvL2hlYWx0aC92MTtoZWFsdGh2MaICA0hYWKoCCUhlYWx0aC5WMcoCCUhlYWx0aFxWMeICFUhlYWx0aFxWMVxHUEJNZXRhZGF0YeoCCkhlYWx0aDo6VjFiBnByb3RvMw");
 
 /**
+ * CheckRequest is empty as no parameters are needed for health check
+ *
  * @generated from message health.v1.CheckRequest
  */
 export type CheckRequest = Message<"health.v1.CheckRequest"> & {
@@ -26,15 +28,21 @@ export const CheckRequestSchema: GenMessage<CheckRequest> = /*@__PURE__*/
   messageDesc(file_health_v1_health, 0);
 
 /**
+ * CheckResponse contains the health status information
+ *
  * @generated from message health.v1.CheckResponse
  */
 export type CheckResponse = Message<"health.v1.CheckResponse"> & {
   /**
+   * status represents the overall service status (e.g., "UP", "DOWN")
+   *
    * @generated from field: string status = 1;
    */
   status: string;
 
   /**
+   * db_status indicates the database connection status (e.g., "Connected", "Disconnected")
+   *
    * @generated from field: string db_status = 2;
    */
   dbStatus: string;
@@ -48,10 +56,16 @@ export const CheckResponseSchema: GenMessage<CheckResponse> = /*@__PURE__*/
   messageDesc(file_health_v1_health, 1);
 
 /**
+ * HealthService provides health check endpoints for the blog service
+ *
  * @generated from service health.v1.HealthService
  */
 export const HealthService: GenService<{
   /**
+   * Check performs a health check of the service and its dependencies
+   * Returns the overall service status and database connectivity status
+   * Used for monitoring and service discovery
+   *
    * @generated from rpc health.v1.HealthService.Check
    */
   check: {

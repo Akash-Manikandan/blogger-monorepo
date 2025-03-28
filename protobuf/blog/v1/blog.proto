@@ -8,38 +8,57 @@ import "auth/v1/auth.proto";
 import "user/v1/user.proto";
 
 service BlogService {
+  // CreateBlog creates a new blog post with the given title, content and visibility
   rpc CreateBlog(CreateBlogRequest) returns (CreateBlogResponse) {
     option (auth.v1.requires_auth) = true;
   };
+
+  // GetBlog retrieves a single blog post by its ID
   rpc GetBlog(GetBlogRequest) returns (GetBlogResponse) {
     option (auth.v1.requires_auth) = true;
   };
+
+  // ListBlogs returns a paginated list of blog posts that can be filtered
   rpc ListBlogs(ListBlogsRequest) returns (ListBlogsResponse) {
     option (auth.v1.requires_auth) = true;
   };
-  // PUT the blog entirely
+
+  // UpdateBlog updates an existing blog post's title, content and visibility
   rpc UpdateBlog(UpdateBlogRequest) returns (UpdateBlogResponse) {
     option (auth.v1.requires_auth) = true;
   };
-  // DELETE the blog
+
+  // DeleteBlog removes a blog post by its ID
   rpc DeleteBlog(DeleteBlogRequest) returns (DeleteBlogResponse) {
     option (auth.v1.requires_auth) = true;
   };
+
+  // LikeBlog adds a like to the specified blog post
   rpc LikeBlog(LikeBlogRequest) returns (LikeBlogResponse) {
     option (auth.v1.requires_auth) = true;
   };
+
+  // AddView increments the view count for the specified blog post
   rpc AddView(AddViewRequest) returns (AddViewResponse) {
     option (auth.v1.requires_auth) = true;
   };
+
+  // GetComments retrieves a paginated list of comments for a blog post
   rpc GetComments(GetCommentsRequest) returns (GetCommentsResponse) {
     option (auth.v1.requires_auth) = true;
   };
+
+  // AddComment creates a new top-level comment on a blog post
   rpc AddComment(AddCommentRequest) returns (AddCommentResponse) {
     option (auth.v1.requires_auth) = true;
   };
+
+  // AddSubComment creates a new reply to an existing comment
   rpc AddSubComment(AddSubCommentRequest) returns (AddSubCommentResponse) {
     option (auth.v1.requires_auth) = true;
   };
+
+  // GetTrendingBlogs returns popular blog posts within a specified timeframe
   rpc GetTrendingBlogs(GetTrendingBlogsRequest) returns (GetTrendingBlogsResponse) {
     option (auth.v1.requires_auth) = true;
   };

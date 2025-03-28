@@ -177,6 +177,12 @@ export const UserSchema: GenMessage<User> = /*@__PURE__*/
  */
 export const UserService: GenService<{
   /**
+   * CreateUser creates a new user account with the provided username, email and password.
+   * The username must be 3-20 characters long and can only contain letters, numbers and underscores.
+   * The email must be a valid email address.
+   * The password must be 6-50 characters long.
+   * Returns the created user details along with an authentication token.
+   *
    * @generated from rpc user.v1.UserService.CreateUser
    */
   createUser: {
@@ -185,6 +191,11 @@ export const UserService: GenService<{
     output: typeof CreateUserResponseSchema;
   },
   /**
+   * Login authenticates a user with their email and password.
+   * The email must be a valid email address.
+   * The password must be 6-50 characters long.
+   * Returns user details and an authentication token on successful login.
+   *
    * @generated from rpc user.v1.UserService.Login
    */
   login: {

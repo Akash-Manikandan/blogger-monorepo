@@ -659,6 +659,8 @@ export const TagSchema: GenMessage<Tag> = /*@__PURE__*/
  */
 export const BlogService: GenService<{
   /**
+   * CreateBlog creates a new blog post with the given title, content and visibility
+   *
    * @generated from rpc blog.v1.BlogService.CreateBlog
    */
   createBlog: {
@@ -667,6 +669,8 @@ export const BlogService: GenService<{
     output: typeof CreateBlogResponseSchema;
   },
   /**
+   * GetBlog retrieves a single blog post by its ID
+   *
    * @generated from rpc blog.v1.BlogService.GetBlog
    */
   getBlog: {
@@ -675,6 +679,8 @@ export const BlogService: GenService<{
     output: typeof GetBlogResponseSchema;
   },
   /**
+   * ListBlogs returns a paginated list of blog posts that can be filtered
+   *
    * @generated from rpc blog.v1.BlogService.ListBlogs
    */
   listBlogs: {
@@ -683,7 +689,7 @@ export const BlogService: GenService<{
     output: typeof ListBlogsResponseSchema;
   },
   /**
-   * PUT the blog entirely
+   * UpdateBlog updates an existing blog post's title, content and visibility
    *
    * @generated from rpc blog.v1.BlogService.UpdateBlog
    */
@@ -693,7 +699,7 @@ export const BlogService: GenService<{
     output: typeof UpdateBlogResponseSchema;
   },
   /**
-   * DELETE the blog
+   * DeleteBlog removes a blog post by its ID
    *
    * @generated from rpc blog.v1.BlogService.DeleteBlog
    */
@@ -703,6 +709,8 @@ export const BlogService: GenService<{
     output: typeof DeleteBlogResponseSchema;
   },
   /**
+   * LikeBlog adds a like to the specified blog post
+   *
    * @generated from rpc blog.v1.BlogService.LikeBlog
    */
   likeBlog: {
@@ -711,6 +719,8 @@ export const BlogService: GenService<{
     output: typeof LikeBlogResponseSchema;
   },
   /**
+   * AddView increments the view count for the specified blog post
+   *
    * @generated from rpc blog.v1.BlogService.AddView
    */
   addView: {
@@ -719,6 +729,8 @@ export const BlogService: GenService<{
     output: typeof AddViewResponseSchema;
   },
   /**
+   * GetComments retrieves a paginated list of comments for a blog post
+   *
    * @generated from rpc blog.v1.BlogService.GetComments
    */
   getComments: {
@@ -727,6 +739,8 @@ export const BlogService: GenService<{
     output: typeof GetCommentsResponseSchema;
   },
   /**
+   * AddComment creates a new top-level comment on a blog post
+   *
    * @generated from rpc blog.v1.BlogService.AddComment
    */
   addComment: {
@@ -735,6 +749,8 @@ export const BlogService: GenService<{
     output: typeof AddCommentResponseSchema;
   },
   /**
+   * AddSubComment creates a new reply to an existing comment
+   *
    * @generated from rpc blog.v1.BlogService.AddSubComment
    */
   addSubComment: {
@@ -743,6 +759,8 @@ export const BlogService: GenService<{
     output: typeof AddSubCommentResponseSchema;
   },
   /**
+   * GetTrendingBlogs returns popular blog posts within a specified timeframe
+   *
    * @generated from rpc blog.v1.BlogService.GetTrendingBlogs
    */
   getTrendingBlogs: {

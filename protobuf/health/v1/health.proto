@@ -4,13 +4,21 @@ package health.v1;
 
 option go_package = "github.com/Akash-Manikandan/blogger-service/proto/health/v1";
 
+// HealthService provides health check endpoints for the blog service
 service HealthService {
+  // Check performs a health check of the service and its dependencies
+  // Returns the overall service status and database connectivity status
+  // Used for monitoring and service discovery
   rpc Check(CheckRequest) returns (CheckResponse);
 }
 
+// CheckRequest is empty as no parameters are needed for health check
 message CheckRequest {}
 
+// CheckResponse contains the health status information
 message CheckResponse {
+  // status represents the overall service status (e.g., "UP", "DOWN")
   string status = 1;
+  // db_status indicates the database connection status (e.g., "Connected", "Disconnected")
   string db_status = 2;
 }

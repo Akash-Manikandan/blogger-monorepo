@@ -36,18 +36,27 @@ const (
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type BlogServiceClient interface {
+	// CreateBlog creates a new blog post with the given title, content and visibility
 	CreateBlog(ctx context.Context, in *CreateBlogRequest, opts ...grpc.CallOption) (*CreateBlogResponse, error)
+	// GetBlog retrieves a single blog post by its ID
 	GetBlog(ctx context.Context, in *GetBlogRequest, opts ...grpc.CallOption) (*GetBlogResponse, error)
+	// ListBlogs returns a paginated list of blog posts that can be filtered
 	ListBlogs(ctx context.Context, in *ListBlogsRequest, opts ...grpc.CallOption) (*ListBlogsResponse, error)
-	// PUT the blog entirely
+	// UpdateBlog updates an existing blog post's title, content and visibility
 	UpdateBlog(ctx context.Context, in *UpdateBlogRequest, opts ...grpc.CallOption) (*UpdateBlogResponse, error)
-	// DELETE the blog
+	// DeleteBlog removes a blog post by its ID
 	DeleteBlog(ctx context.Context, in *DeleteBlogRequest, opts ...grpc.CallOption) (*DeleteBlogResponse, error)
+	// LikeBlog adds a like to the specified blog post
 	LikeBlog(ctx context.Context, in *LikeBlogRequest, opts ...grpc.CallOption) (*LikeBlogResponse, error)
+	// AddView increments the view count for the specified blog post
 	AddView(ctx context.Context, in *AddViewRequest, opts ...grpc.CallOption) (*AddViewResponse, error)
+	// GetComments retrieves a paginated list of comments for a blog post
 	GetComments(ctx context.Context, in *GetCommentsRequest, opts ...grpc.CallOption) (*GetCommentsResponse, error)
+	// AddComment creates a new top-level comment on a blog post
 	AddComment(ctx context.Context, in *AddCommentRequest, opts ...grpc.CallOption) (*AddCommentResponse, error)
+	// AddSubComment creates a new reply to an existing comment
 	AddSubComment(ctx context.Context, in *AddSubCommentRequest, opts ...grpc.CallOption) (*AddSubCommentResponse, error)
+	// GetTrendingBlogs returns popular blog posts within a specified timeframe
 	GetTrendingBlogs(ctx context.Context, in *GetTrendingBlogsRequest, opts ...grpc.CallOption) (*GetTrendingBlogsResponse, error)
 }
 
@@ -173,18 +182,27 @@ func (c *blogServiceClient) GetTrendingBlogs(ctx context.Context, in *GetTrendin
 // All implementations must embed UnimplementedBlogServiceServer
 // for forward compatibility.
 type BlogServiceServer interface {
+	// CreateBlog creates a new blog post with the given title, content and visibility
 	CreateBlog(context.Context, *CreateBlogRequest) (*CreateBlogResponse, error)
+	// GetBlog retrieves a single blog post by its ID
 	GetBlog(context.Context, *GetBlogRequest) (*GetBlogResponse, error)
+	// ListBlogs returns a paginated list of blog posts that can be filtered
 	ListBlogs(context.Context, *ListBlogsRequest) (*ListBlogsResponse, error)
-	// PUT the blog entirely
+	// UpdateBlog updates an existing blog post's title, content and visibility
 	UpdateBlog(context.Context, *UpdateBlogRequest) (*UpdateBlogResponse, error)
-	// DELETE the blog
+	// DeleteBlog removes a blog post by its ID
 	DeleteBlog(context.Context, *DeleteBlogRequest) (*DeleteBlogResponse, error)
+	// LikeBlog adds a like to the specified blog post
 	LikeBlog(context.Context, *LikeBlogRequest) (*LikeBlogResponse, error)
+	// AddView increments the view count for the specified blog post
 	AddView(context.Context, *AddViewRequest) (*AddViewResponse, error)
+	// GetComments retrieves a paginated list of comments for a blog post
 	GetComments(context.Context, *GetCommentsRequest) (*GetCommentsResponse, error)
+	// AddComment creates a new top-level comment on a blog post
 	AddComment(context.Context, *AddCommentRequest) (*AddCommentResponse, error)
+	// AddSubComment creates a new reply to an existing comment
 	AddSubComment(context.Context, *AddSubCommentRequest) (*AddSubCommentResponse, error)
+	// GetTrendingBlogs returns popular blog posts within a specified timeframe
 	GetTrendingBlogs(context.Context, *GetTrendingBlogsRequest) (*GetTrendingBlogsResponse, error)
 	mustEmbedUnimplementedBlogServiceServer()
 }
