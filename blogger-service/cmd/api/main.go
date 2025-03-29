@@ -47,8 +47,12 @@ func main() {
 			middleware.JWTAuthInterceptor,        // JWT Auth middleware
 			middleware.UnaryValidatorInterceptor, // Validation middleware
 			middleware.UnaryLoggingInterceptor,   // Logging middleware
+			middleware.UnaryPanicRecoveryInterceptor,
 		),
-		grpc.StreamInterceptor(middleware.StreamLoggingInterceptor),
+		grpc.ChainStreamInterceptor(
+			middleware.StreamLoggingInterceptor,
+			middleware.StreamPanicRecoveryInterceptor,
+		),
 	)
 	healthServer := health.NewBlogHealthServer(db)
 	usersServer := users.UserServerRegister(db)

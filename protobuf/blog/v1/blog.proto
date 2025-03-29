@@ -114,6 +114,11 @@ message ListBlogsRequest {
 
 message ListBlogsResponse {
   repeated BlogWithoutContent blogs = 1;
+  int32 total_count = 2;
+  int32 current_page = 3;
+  int32 total_pages = 4;
+  int32 next_page = 5;
+  int32 prev_page = 6;
 }
 
 message UpdateBlogRequest {

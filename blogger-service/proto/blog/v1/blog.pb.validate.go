@@ -1029,6 +1029,16 @@ func (m *ListBlogsResponse) validate(all bool) error {
 
 	}
 
+	// no validation rules for TotalCount
+
+	// no validation rules for CurrentPage
+
+	// no validation rules for TotalPages
+
+	// no validation rules for NextPage
+
+	// no validation rules for PrevPage
+
 	if len(errors) > 0 {
 		return ListBlogsResponseMultiError(errors)
 	}

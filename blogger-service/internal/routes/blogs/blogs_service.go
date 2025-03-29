@@ -3,6 +3,7 @@ package blogs
 import (
 	"errors"
 	"log"
+	"math"
 
 	"github.com/Akash-Manikandan/blogger-service/models"
 	pb "github.com/Akash-Manikandan/blogger-service/proto/blog/v1"
@@ -94,7 +95,66 @@ func GetBlogService(DB *gorm.DB, req *pb.GetBlogRequest, userId string) (*pb.Get
 
 func ListBlogsService(DB *gorm.DB, req *pb.ListBlogsRequest, userId string) (*pb.ListBlogsResponse, error) {
 	var blogs []models.Blog
-	if err := DB.Preload("User").Where("user_id = ? or is_public = ?", userId, true).Find(&blogs).Error; err != nil {
+
+	baseQuery := DB.Preload("User").Where("user_id = ? OR is_public = ?", userId, true)
+
+	if req.Page != nil {
+		var limit int32 = 100
+		if req.Limit != nil {
+			limit = req.GetLimit()
+		}
+
+		currentPage := req.GetPage()
+		offset := (currentPage - 1) * limit
+
+		var totalCount int64
+		if err := baseQuery.Model(&models.Blog{}).Count(&totalCount).Error; err != nil {
+			return nil, status.Errorf(codes.Internal, "failed to count blogs: %v", err)
+		}
+
+		if err := baseQuery.Order("updated_at DESC").Offset(int(offset)).Limit(int(limit)).Find(&blogs).Error; err != nil {
+			return nil, status.Errorf(codes.NotFound, "blogs not found: %v", err)
+		}
+
+		totalPages := int32(math.Ceil(float64(totalCount) / float64(limit)))
+
+		var nextPage, prevPage int32
+		if currentPage < totalPages {
+			nextPage = currentPage + 1
+		}
+		if currentPage > 1 {
+			prevPage = currentPage - 1
+		}
+
+		var blogResponses []*pb.BlogWithoutContent
+		for _, blog := range blogs {
+			blogResponses = append(blogResponses, &pb.BlogWithoutContent{
+				Title: blog.Title,
+				Author: &userPb.User{
+					Id:       blog.User.ID,
+					Username: blog.User.Username,
+					Email:    blog.User.Email,
+				},
+				Id:        blog.ID,
+				Views:     int32(blog.ViewCount),
+				Likes:     int32(blog.TrendingCount),
+				IsPublic:  blog.IsPublic,
+				CreatedAt: blog.CreatedAt.String(),
+				UpdatedAt: blog.UpdatedAt.String(),
+			})
+		}
+
+		return &pb.ListBlogsResponse{
+			Blogs:       blogResponses,
+			TotalCount:  int32(totalCount),
+			CurrentPage: currentPage,
+			TotalPages:  totalPages,
+			NextPage:    nextPage,
+			PrevPage:    prevPage,
+		}, nil
+	}
+
+	if err := baseQuery.Order("updated_at DESC").Find(&blogs).Error; err != nil {
 		return nil, status.Errorf(codes.NotFound, "blogs not found: %v", err)
 	}
 
